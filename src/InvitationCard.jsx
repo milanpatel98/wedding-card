@@ -302,6 +302,37 @@ const css = `
   }
   .hint:hover { color: rgba(255,255,255,0.35); }
 
+  .cal-btn {
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 8px;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.22);
+    text-transform: uppercase;
+    cursor: pointer;
+    user-select: none;
+    background: none;
+    border: none;
+    padding: 10px 18px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 2px;
+    transition: color 0.3s, border-color 0.3s;
+  }
+  .cal-btn:hover {
+    color: rgba(255,255,255,0.55);
+    border-color: rgba(255,255,255,0.22);
+  }
+  .cal-btn svg {
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    flex-shrink: 0;
+  }
+  .cal-btn:hover svg { opacity: 1; }
+
 `;
 
 export default function InvitationCard() {
@@ -362,6 +393,31 @@ export default function InvitationCard() {
     a.href = png;
     a.download = filename;
     a.click();
+  };
+
+  const addToCalendar = () => {
+    const ics = [
+      "BEGIN:VCALENDAR",
+      "VERSION:2.0",
+      "PRODID:-//Milan & Jennifer Wedding//EN",
+      "BEGIN:VEVENT",
+      "DTSTART:20260606T130000",
+      "DTEND:20260606T170000",
+      "SUMMARY:Jennifer & Milan's Wedding",
+      "LOCATION:St Thomas Church\\, 1450 S Melrose Dr\\, Oceanside\\, CA 92056",
+      "DESCRIPTION:Please join us for the wedding of Jennifer Huitron and Milan Patel. Reception to follow.",
+      "URL:https://milanpatel98.github.io/milanjenniferweds",
+      "END:VEVENT",
+      "END:VCALENDAR",
+    ].join("\r\n");
+
+    const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "jennifer-milan-wedding.ics";
+    a.click();
+    URL.revokeObjectURL(url);
   };
 
   return (
@@ -437,6 +493,12 @@ export default function InvitationCard() {
         <p className="hint" onClick={flip}>
           {flipped ? "← flip back" : "tap to flip →"}
         </p>
+        <button className="cal-btn" onClick={addToCalendar}>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          Add to Calendar
+        </button>
       </div>
     </>
   );

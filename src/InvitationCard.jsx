@@ -217,7 +217,7 @@ const css = `
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 52px 36px 48px;
+    padding: 76px 36px 72px;
   }
 
   .b-top {
@@ -261,8 +261,8 @@ const css = `
   }
 
   .qr-wrap {
-    width: 200px;
-    height: 200px;
+    width: 175px;
+    height: 175px;
     background: transparent;
     padding: 4px;
     display: flex;

@@ -403,7 +403,7 @@ export default function InvitationCard() {
       // Ceremony
       "BEGIN:VEVENT",
       "DTSTART:20260606T130000",
-      "DTEND:20260606T163000",
+      "DTEND:20260606T150000",
       "SUMMARY:Jennifer & Milan's Wedding Ceremony",
       "LOCATION:St Thomas Church\\, 1450 S Melrose Dr\\, Oceanside\\, CA 92056",
       "DESCRIPTION:Please join us for the wedding of Jennifer Huitron and Milan Patel.",

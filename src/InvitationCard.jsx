@@ -76,49 +76,49 @@ const css = `
     top: calc(8px + env(safe-area-inset-top));
     right: 8px;
     z-index: 120;
-    width: 28px;
-    height: 28px;
-    display: grid;
-    place-items: center;
+    width: 36px;
+    height: 20px;
+    padding: 2px;
     border: 1px solid rgba(255,248,230,0.1);
-    border-radius: 50%;
+    border-radius: 999px;
     background: rgba(0,0,0,0.08);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     cursor: pointer;
-    color: rgba(255,248,230,0.54);
     box-shadow: 0 8px 22px rgba(0,0,0,0.12);
     transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
   }
 
-  .theme-icon {
-    width: 13px;
-    height: 13px;
-    stroke: currentColor;
-    stroke-width: 1.35;
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    opacity: 0.9;
+  .theme-toggle::after {
+    content: "";
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(255,248,230,0.62);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    transition: transform 0.35s ease, background 0.35s ease;
   }
 
   .theme-toggle:hover {
     transform: translateY(-1px);
     border-color: rgba(255,248,230,0.28);
-    color: rgba(255,248,230,0.95);
     box-shadow: 0 10px 24px rgba(0,0,0,0.18);
   }
 
   .wrapper.light .theme-toggle {
     border-color: rgba(35,25,18,0.1);
     background: rgba(255,255,255,0.18);
-    color: rgba(35,25,18,0.48);
     box-shadow: 0 8px 20px rgba(72,50,28,0.08);
+  }
+
+  .wrapper.light .theme-toggle::after {
+    transform: translateX(16px);
+    background: rgba(35,25,18,0.5);
   }
 
   .wrapper.light .theme-toggle:hover {
     border-color: rgba(35,25,18,0.28);
-    color: rgba(35,25,18,0.95);
   }
 
   .glow {
@@ -713,18 +713,7 @@ export default function InvitationCard() {
           type="button"
           aria-label={lightMode ? "Switch to dark mode" : "Switch to light mode"}
           onClick={() => setLightMode(value => !value)}
-        >
-          {lightMode ? (
-            <svg className="theme-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="12" r="3.5" />
-              <path d="M12 2.8v2.1M12 19.1v2.1M4.9 4.9l1.5 1.5M17.6 17.6l1.5 1.5M2.8 12h2.1M19.1 12h2.1M4.9 19.1l1.5-1.5M17.6 6.4l1.5-1.5" />
-            </svg>
-          ) : (
-            <svg className="theme-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M18.7 15.7A7.6 7.6 0 0 1 8.3 5.3 7.8 7.8 0 1 0 18.7 15.7Z" />
-            </svg>
-          )}
-        </button>
+        />
         <div
           className="scene"
           onClick={flip}

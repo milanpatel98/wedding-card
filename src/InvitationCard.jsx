@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { toPng } from "html-to-image"; // kept for future use
+import qrUrl from "./assets/wedding_qr.svg";
 import ramImg from "./assets/ram.png";
 
 const base = import.meta.env.BASE_URL;
@@ -409,7 +410,7 @@ export default function InvitationCard() {
               </p>
               <p className="b-url">milanpatel98.github.io/milanjenniferweds</p>
               <div className="qr-wrap">
-                  <img src={`${base}wedding_qr.svg`} alt="QR Code" />
+                  <img src={qrUrl} alt="QR Code" />
               </div>
               <div className="b-sigs">
                 <span className="b-sig">Jennifer</span>

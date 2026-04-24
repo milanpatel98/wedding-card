@@ -304,36 +304,31 @@ const css = `
   .hint:hover { color: rgba(255,255,255,0.6); }
 
   .cal-btn {
-    display: inline-flex;
+    flex: 1;
+    display: flex;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
+    gap: 7px;
     font-family: 'Cormorant Garamond', serif;
     font-weight: 300;
     font-size: 9px;
-    letter-spacing: 3px;
-    color: rgba(255,248,230,0.5);
+    letter-spacing: 4px;
+    color: rgba(255,248,230,0.45);
     text-transform: uppercase;
     cursor: pointer;
     user-select: none;
-    background: rgba(255,248,230,0.03);
-    border: 1px solid rgba(255,248,230,0.18);
+    background: none;
+    border: none;
     outline: none;
-    padding: 12px 18px;
-    border-radius: 1px;
+    padding: 6px 0;
     white-space: nowrap;
-    flex: 1;
-    max-width: 180px;
-    justify-content: center;
-    transition: color 0.4s, background 0.4s, border-color 0.4s;
+    border-right: 1px solid rgba(255,255,255,0.12);
+    transition: color 0.3s;
   }
-  .cal-btn:hover {
-    color: rgba(255,248,230,0.92);
-    background: rgba(255,248,230,0.07);
-    border-color: rgba(255,248,230,0.4);
-  }
+  .cal-btn:hover { color: rgba(255,248,230,0.85); }
   .cal-btn svg {
-    opacity: 0.65;
-    transition: opacity 0.4s;
+    opacity: 0.55;
+    transition: opacity 0.3s;
     flex-shrink: 0;
   }
   .cal-btn:hover svg { opacity: 1; }
@@ -346,9 +341,7 @@ const css = `
     z-index: 100;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 12px;
-    padding: 14px 20px calc(14px + env(safe-area-inset-bottom));
+    padding: 16px 0 calc(16px + env(safe-area-inset-bottom));
     background: rgba(0,0,0,0.85);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -356,28 +349,26 @@ const css = `
   }
 
   .rsvp-btn {
-    display: inline-flex;
+    flex: 1;
+    display: flex;
     align-items: center;
+    justify-content: center;
     font-family: 'Cormorant Garamond', serif;
     font-weight: 300;
-    font-size: 10px;
-    letter-spacing: 5px;
-    color: #000;
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: rgba(255,248,230,0.75);
     text-transform: uppercase;
     text-decoration: none;
     cursor: pointer;
-    background: rgba(255,248,230,0.92);
+    background: none;
     border: none;
     outline: none;
-    padding: 12px 28px;
-    border-radius: 1px;
+    padding: 6px 0;
     white-space: nowrap;
-    transition: background 0.3s;
-    flex: 1;
-    max-width: 160px;
-    justify-content: center;
+    transition: color 0.3s;
   }
-  .rsvp-btn:hover { background: #fff; }
+  .rsvp-btn:hover { color: rgba(255,248,230,1); }
 
 `;
 
@@ -551,9 +542,6 @@ export default function InvitationCard() {
         </p>
         <div className="bottom-bar">
           <button className="cal-btn" onClick={addToCalendar}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,248,230,0.9)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
-            </svg>
             Add to Calendar
           </button>
           <a

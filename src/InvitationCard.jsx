@@ -556,10 +556,8 @@ export default function InvitationCard() {
             rel="noopener noreferrer"
           >
             RSVP
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="9" cy="9" r="8"/>
-              <line x1="6" y1="9" x2="12" y2="9"/>
-              <polyline points="9.5 6.5 12 9 9.5 11.5"/>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
             </svg>
           </a>
         </div>

@@ -304,49 +304,35 @@ const css = `
   .hint:hover { color: rgba(255,255,255,0.35); }
 
   .cal-btn {
-    margin-top: 24px;
+    margin-top: 22px;
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
+    gap: 7px;
     font-family: 'Cormorant Garamond', serif;
     font-weight: 300;
-    font-size: 10px;
-    letter-spacing: 6px;
-    color: rgba(255,255,255,0.45);
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    color: rgba(255,255,255,0.35);
     text-transform: uppercase;
     cursor: pointer;
     user-select: none;
     background: none;
-    border: none;
+    border: 1px solid rgba(255,255,255,0.15);
     outline: none;
-    padding: 0;
-    position: relative;
-    transition: color 0.4s;
+    padding: 9px 16px;
+    border-radius: 1px;
+    transition: color 0.3s, border-color 0.3s;
   }
-  .cal-btn::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: rgba(255,255,255,0.18);
-    transform: scaleX(0.4);
-    transform-origin: center;
-    transition: transform 0.4s ease, background 0.4s;
-  }
-  .cal-btn:hover { color: rgba(255,255,255,0.8); }
-  .cal-btn:hover::after {
-    transform: scaleX(1);
-    background: rgba(255,255,255,0.4);
+  .cal-btn:hover {
+    color: rgba(255,255,255,0.7);
+    border-color: rgba(255,255,255,0.35);
   }
   .cal-btn svg {
-    opacity: 0.6;
-    transition: opacity 0.4s;
+    opacity: 0.5;
+    transition: opacity 0.3s;
     flex-shrink: 0;
   }
-  .cal-btn:hover svg { opacity: 1; }
+  .cal-btn:hover svg { opacity: 0.9; }
 
 `;
 

@@ -64,6 +64,61 @@ const css = `
     align-items: center;
     justify-content: center;
     padding: 40px 20px 100px;
+    transition: background 0.5s ease;
+  }
+
+  .wrapper.light {
+    background: radial-gradient(ellipse at center, #fff9ee 0%, #efe4d4 58%, #dfd0bd 100%);
+  }
+
+  .theme-toggle {
+    position: fixed;
+    top: calc(16px + env(safe-area-inset-top));
+    right: 16px;
+    z-index: 120;
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255,248,230,0.14);
+    border-radius: 50%;
+    background: linear-gradient(145deg, rgba(255,255,255,0.065), rgba(255,255,255,0.015));
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    cursor: pointer;
+    color: rgba(255,248,230,0.72);
+    box-shadow: 0 14px 34px rgba(0,0,0,0.24), inset 0 1px 0 rgba(255,255,255,0.06);
+    transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .theme-icon {
+    width: 15px;
+    height: 15px;
+    stroke: currentColor;
+    stroke-width: 1.35;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.9;
+  }
+
+  .theme-toggle:hover {
+    transform: translateY(-1px);
+    border-color: rgba(255,248,230,0.28);
+    color: rgba(255,248,230,0.95);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08);
+  }
+
+  .wrapper.light .theme-toggle {
+    border-color: rgba(35,25,18,0.18);
+    background: linear-gradient(145deg, rgba(255,255,255,0.44), rgba(255,255,255,0.14));
+    color: rgba(35,25,18,0.72);
+    box-shadow: 0 14px 32px rgba(72,50,28,0.14), inset 0 1px 0 rgba(255,255,255,0.55);
+  }
+
+  .wrapper.light .theme-toggle:hover {
+    border-color: rgba(35,25,18,0.28);
+    color: rgba(35,25,18,0.95);
   }
 
   .glow {
@@ -81,6 +136,14 @@ const css = `
     z-index: 0;
     filter: blur(60px);
     will-change: transform;
+  }
+
+  .wrapper.light .glow {
+    background: radial-gradient(ellipse,
+      rgba(255,255,255,0.45) 0%,
+      rgba(255,238,205,0.18) 42%,
+      transparent 100%
+    );
   }
 
   .scene {
@@ -121,6 +184,11 @@ const css = `
     -webkit-backface-visibility: hidden;
     overflow: hidden;
     box-shadow: 0 40px 80px rgba(0,0,0,0.95);
+    transition: background 0.5s ease, box-shadow 0.5s ease;
+  }
+
+  .wrapper.light .face {
+    box-shadow: 0 34px 70px rgba(72,50,28,0.22);
   }
 
   /* FRONT */
@@ -132,11 +200,21 @@ const css = `
     padding: 44px 40px 38px;
   }
 
+  .wrapper.light .front,
+  .wrapper.light .back {
+    background: #f4eadc;
+  }
+
   .f-ram {
     display: block;
     width: 55px;
     margin: 0 auto 10px;
     opacity: 0.5;
+  }
+
+  .wrapper.light .f-ram {
+    filter: invert(1);
+    opacity: 0.34;
   }
 
   .f-together {
@@ -248,6 +326,29 @@ const css = `
     white-space: nowrap;
   }
 
+  .wrapper.light .f-name1,
+  .wrapper.light .f-name2,
+  .wrapper.light .f-date {
+    color: rgba(28,22,18,0.94);
+  }
+
+  .wrapper.light .f-plus {
+    color: rgba(28,22,18,0.55);
+  }
+
+  .wrapper.light .f-together,
+  .wrapper.light .f-request {
+    color: rgba(28,22,18,0.6);
+  }
+
+  .wrapper.light .f-details {
+    color: rgba(28,22,18,0.56);
+  }
+
+  .wrapper.light .f-reception {
+    color: rgba(28,22,18,0.5);
+  }
+
   /* BACK */
   .back {
     background: #121212;
@@ -318,6 +419,8 @@ const css = `
 
   .qr-wrap img { width: 100%; height: 100%; filter: invert(1); }
 
+  .wrapper.light .qr-wrap img { filter: none; }
+
   .b-sigs {
     display: flex;
     flex-direction: column;
@@ -342,6 +445,26 @@ const css = `
     line-height: 1;
   }
 
+  .wrapper.light .b-title {
+    color: rgba(28,22,18,0.8);
+  }
+
+  .wrapper.light .b-body {
+    color: rgba(28,22,18,0.62);
+  }
+
+  .wrapper.light .b-url {
+    color: rgba(28,22,18,0.48);
+  }
+
+  .wrapper.light .b-sig {
+    color: rgba(28,22,18,0.5);
+  }
+
+  .wrapper.light .b-sig-plus {
+    color: rgba(28,22,18,0.55);
+  }
+
   .hint {
     margin-top: 22px;
     font-family: 'Cormorant Garamond', serif;
@@ -357,6 +480,14 @@ const css = `
   }
   .hint:hover { color: rgba(255,255,255,0.6); }
 
+  .wrapper.light .hint {
+    color: rgba(28,22,18,0.55);
+  }
+
+  .wrapper.light .hint:hover {
+    color: rgba(28,22,18,0.78);
+  }
+
   .bottom-bar {
     position: fixed;
     bottom: 0;
@@ -370,6 +501,12 @@ const css = `
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-top: 1px solid rgba(255,255,255,0.07);
+    transition: background 0.5s ease, border-color 0.5s ease;
+  }
+
+  .wrapper.light .bottom-bar {
+    background: rgba(244,234,220,0.86);
+    border-top-color: rgba(35,25,18,0.1);
   }
 
   .cal-btn {
@@ -401,6 +538,15 @@ const css = `
   }
   .cal-btn:hover svg { opacity: 1; }
 
+  .wrapper.light .cal-btn {
+    color: rgba(35,25,18,0.58);
+    border-right-color: rgba(35,25,18,0.14);
+  }
+
+  .wrapper.light .cal-btn:hover {
+    color: rgba(35,25,18,0.9);
+  }
+
   .rsvp-btn {
     flex: 1;
     display: flex;
@@ -426,11 +572,20 @@ const css = `
     gap: 13px;
   }
 
+  .wrapper.light .rsvp-btn {
+    color: rgba(35,25,18,0.76);
+  }
+
+  .wrapper.light .rsvp-btn:hover {
+    color: rgba(35,25,18,1);
+  }
+
 `;
 
 export default function InvitationCard() {
   const [flipped, setFlipped] = useState(false);
   const [wobble, setWobble] = useState(false);
+  const [lightMode, setLightMode] = useState(false);
   const flippedRef = useRef(false);
   const cardRef = useRef(null);
   const glowRef = useRef(null);
@@ -552,7 +707,24 @@ export default function InvitationCard() {
   return (
     <>
       <style>{css}</style>
-      <div className="wrapper">
+      <div className={`wrapper${lightMode ? " light" : ""}`}>
+        <button
+          className="theme-toggle"
+          type="button"
+          aria-label={lightMode ? "Switch to dark mode" : "Switch to light mode"}
+          onClick={() => setLightMode(value => !value)}
+        >
+          {lightMode ? (
+            <svg className="theme-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="3.5" />
+              <path d="M12 2.8v2.1M12 19.1v2.1M4.9 4.9l1.5 1.5M17.6 17.6l1.5 1.5M2.8 12h2.1M19.1 12h2.1M4.9 19.1l1.5-1.5M17.6 6.4l1.5-1.5" />
+            </svg>
+          ) : (
+            <svg className="theme-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18.7 15.7A7.6 7.6 0 0 1 8.3 5.3 7.8 7.8 0 1 0 18.7 15.7Z" />
+            </svg>
+          )}
+        </button>
         <div
           className="scene"
           onClick={flip}

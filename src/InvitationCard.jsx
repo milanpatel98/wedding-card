@@ -220,6 +220,13 @@ const css = `
     padding: 44px 36px 40px;
   }
 
+  .b-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
   .b-title {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 300;
@@ -514,22 +521,24 @@ export default function InvitationCard() {
             </div>
 
             <div className="face back" ref={backRef}>
-              <p className="b-title">Our Wedding Website</p>
-              <p className="b-body">
-                kindly scan the QR code to RSVP<br />
-                and visit our wedding website<br />
-                please respond by June 1st · 2026
-              </p>
-              <p className="b-url">milanpatel98.github.io/milanjenniferweds</p>
-                <a
-                  className="qr-wrap"
-                  href="https://milanpatel98.github.io/milanjenniferweds"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={e => e.stopPropagation()}
-                >
-                  <img src={qrUrl} alt="QR Code" />
-                </a>
+              <div className="b-top">
+                <p className="b-title">Our Wedding Website</p>
+                <p className="b-body">
+                  kindly scan the QR code to RSVP<br />
+                  and visit our wedding website<br />
+                  please respond by June 1st · 2026
+                </p>
+                <p className="b-url">milanpatel98.github.io/milanjenniferweds</p>
+              </div>
+              <a
+                className="qr-wrap"
+                href="https://milanpatel98.github.io/milanjenniferweds"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={e => e.stopPropagation()}
+              >
+                <img src={qrUrl} alt="QR Code" />
+              </a>
               <div className="b-sigs">
                 <span className="b-sig">Jennifer</span>
                 <span className="b-sig-plus">+</span>

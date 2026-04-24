@@ -230,7 +230,7 @@ const css = `
   .b-title {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 300;
-    font-size: 11px;
+    font-size: 14px;
     letter-spacing: 5px;
     color: rgba(255,255,255,0.85);
     text-transform: uppercase;

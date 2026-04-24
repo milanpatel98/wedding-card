@@ -289,50 +289,52 @@ const css = `
   }
 
   .hint {
-    margin-top: 26px;
+    margin-top: 22px;
     font-family: 'Cormorant Garamond', serif;
     font-weight: 300;
-    font-size: 8px;
-    letter-spacing: 5px;
-    color: rgba(255,255,255,0.13);
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.32);
     text-transform: uppercase;
     cursor: pointer;
     user-select: none;
     transition: color 0.3s;
     text-align: center;
   }
-  .hint:hover { color: rgba(255,255,255,0.35); }
+  .hint:hover { color: rgba(255,255,255,0.6); }
 
   .cal-btn {
-    margin-top: 22px;
+    margin-top: 14px;
     display: inline-flex;
     align-items: center;
-    gap: 7px;
+    gap: 9px;
     font-family: 'Cormorant Garamond', serif;
     font-weight: 300;
     font-size: 9px;
-    letter-spacing: 2.5px;
-    color: rgba(255,255,255,0.35);
+    letter-spacing: 3px;
+    color: rgba(255,248,230,0.55);
     text-transform: uppercase;
     cursor: pointer;
     user-select: none;
-    background: none;
-    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,248,230,0.03);
+    border: 1px solid rgba(255,248,230,0.2);
     outline: none;
-    padding: 9px 16px;
+    padding: 12px 24px;
     border-radius: 1px;
-    transition: color 0.3s, border-color 0.3s;
+    transition: color 0.4s, background 0.4s, border-color 0.4s, box-shadow 0.4s;
   }
   .cal-btn:hover {
-    color: rgba(255,255,255,0.7);
-    border-color: rgba(255,255,255,0.35);
+    color: rgba(255,248,230,0.92);
+    background: rgba(255,248,230,0.07);
+    border-color: rgba(255,248,230,0.4);
+    box-shadow: 0 0 28px rgba(255,248,230,0.08);
   }
   .cal-btn svg {
-    opacity: 0.5;
-    transition: opacity 0.3s;
+    opacity: 0.65;
+    transition: opacity 0.4s;
     flex-shrink: 0;
   }
-  .cal-btn:hover svg { opacity: 0.9; }
+  .cal-btn:hover svg { opacity: 1; }
 
 `;
 
@@ -505,7 +507,7 @@ export default function InvitationCard() {
           {flipped ? "← flip back" : "tap to flip →"}
         </p>
         <button className="cal-btn" onClick={addToCalendar}>
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,248,230,0.9)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
           </svg>
           Add to Calendar

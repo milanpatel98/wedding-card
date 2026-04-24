@@ -60,7 +60,7 @@ const css = `
   }
 
   .scene {
-    width: min(380px, 90vw);
+    width: min(390px, 90vw);
     height: min(560px, calc(90vw * 1.513));
     perspective: 1600px;
     cursor: pointer;

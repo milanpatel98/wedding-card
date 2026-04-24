@@ -233,19 +233,20 @@ const css = `
 
   .b-body {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 11px;
+    font-size: 10px;
     font-style: normal;
     font-weight: 300;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.45);
     text-align: center;
     line-height: 2.2;
-    letter-spacing: 1.8px;
+    letter-spacing: 2px;
   }
 
   .b-url {
     font-family: 'Cormorant Garamond', serif;
     font-size: 9px;
     font-weight: 300;
+    font-style: italic;
     letter-spacing: 0.5px;
     color: rgba(255,255,255,0.3);
     text-align: center;
@@ -253,8 +254,8 @@ const css = `
   }
 
   .qr-wrap {
-    width: 155px;
-    height: 155px;
+    width: 175px;
+    height: 175px;
     background: transparent;
     padding: 4px;
     display: flex;
@@ -513,12 +514,13 @@ export default function InvitationCard() {
             </div>
 
             <div className="face back" ref={backRef}>
-              <p className="b-title">You're Invited</p>
+              <p className="b-title">Our Wedding Website</p>
               <p className="b-body">
-                scan to visit our wedding website<br />
-                RSVP · details · accommodations<br />
-                kindly respond by June 1st · 2026
+                kindly scan the QR code to RSVP<br />
+                and visit our wedding website<br />
+                please respond by June 1st · 2026
               </p>
+              <p className="b-url">milanpatel98.github.io/milanjenniferweds</p>
                 <a
                   className="qr-wrap"
                   href="https://milanpatel98.github.io/milanjenniferweds"

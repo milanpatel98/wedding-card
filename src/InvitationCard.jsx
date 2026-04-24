@@ -51,8 +51,8 @@ const css = `
   }
 
   .scene {
-    width: 370px;
-    height: 560px;
+    width: min(370px, 90vw);
+    height: min(560px, calc(90vw * 1.513));
     perspective: 1600px;
     cursor: pointer;
     position: relative;

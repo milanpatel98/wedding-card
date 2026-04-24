@@ -449,8 +449,8 @@ export default function InvitationCard() {
 
     const initialTimer = setTimeout(() => {
       triggerWobble();
-      wobbleIntervalRef.current = setInterval(triggerWobble, 10000);
-    }, 5000);
+      wobbleIntervalRef.current = setInterval(triggerWobble, 5000);
+    }, 2500);
 
     return () => {
       clearTimeout(initialTimer);

@@ -528,16 +528,16 @@ export default function InvitationCard() {
             </div>
 
             <div className="face back" ref={backRef}>
-              <div className="b-main">
-                <div className="b-top">
-                  <p className="b-title">Our Wedding Website</p>
-                  <p className="b-body">
+              <div className="b-top">
+                <p className="b-title">Our Wedding Website</p>
+                <p className="b-body">
                   kindly scan the QR code or use the<br />
                   buttons below to RSVP and save the date<br />
                   please respond by May 30th · 2026
-                  </p>
-                  <p className="b-url">milanpatel98.github.io/milanjenniferweds</p>
-                </div>
+                </p>
+                <p className="b-url">milanpatel98.github.io/milanjenniferweds</p>
+              </div>
+              <div className="b-main">
                 <a
                   className="qr-wrap"
                   href="https://milanpatel98.github.io/milanjenniferweds"
@@ -547,11 +547,11 @@ export default function InvitationCard() {
                 >
                   <img src={qrUrl} alt="QR Code" />
                 </a>
-              </div>
-              <div className="b-sigs">
-                <span className="b-sig">Jennifer</span>
-                <span className="b-sig-plus">+</span>
-                <span className="b-sig">Milan</span>
+                <div className="b-sigs">
+                  <span className="b-sig">Jennifer</span>
+                  <span className="b-sig-plus">+</span>
+                  <span className="b-sig">Milan</span>
+                </div>
               </div>
             </div>
 

@@ -73,27 +73,27 @@ const css = `
 
   .theme-toggle {
     position: fixed;
-    top: calc(16px + env(safe-area-inset-top));
-    right: 16px;
+    top: calc(8px + env(safe-area-inset-top));
+    right: 8px;
     z-index: 120;
-    width: 36px;
-    height: 36px;
+    width: 28px;
+    height: 28px;
     display: grid;
     place-items: center;
-    border: 1px solid rgba(255,248,230,0.14);
+    border: 1px solid rgba(255,248,230,0.1);
     border-radius: 50%;
-    background: linear-gradient(145deg, rgba(255,255,255,0.065), rgba(255,255,255,0.015));
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    background: rgba(0,0,0,0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     cursor: pointer;
-    color: rgba(255,248,230,0.72);
-    box-shadow: 0 14px 34px rgba(0,0,0,0.24), inset 0 1px 0 rgba(255,255,255,0.06);
+    color: rgba(255,248,230,0.54);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
     transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
   }
 
   .theme-icon {
-    width: 15px;
-    height: 15px;
+    width: 13px;
+    height: 13px;
     stroke: currentColor;
     stroke-width: 1.35;
     fill: none;
@@ -106,14 +106,14 @@ const css = `
     transform: translateY(-1px);
     border-color: rgba(255,248,230,0.28);
     color: rgba(255,248,230,0.95);
-    box-shadow: 0 18px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.18);
   }
 
   .wrapper.light .theme-toggle {
-    border-color: rgba(35,25,18,0.18);
-    background: linear-gradient(145deg, rgba(255,255,255,0.44), rgba(255,255,255,0.14));
-    color: rgba(35,25,18,0.72);
-    box-shadow: 0 14px 32px rgba(72,50,28,0.14), inset 0 1px 0 rgba(255,255,255,0.55);
+    border-color: rgba(35,25,18,0.1);
+    background: rgba(255,255,255,0.18);
+    color: rgba(35,25,18,0.48);
+    box-shadow: 0 8px 20px rgba(72,50,28,0.08);
   }
 
   .wrapper.light .theme-toggle:hover {

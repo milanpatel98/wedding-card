@@ -524,8 +524,10 @@ export default function InvitationCard() {
               <div className="b-top">
                 <p className="b-title">Our Wedding Website</p>
                 <p className="b-body">
-                  kindly scan the QR code to RSVP<br />
-                  and visit our wedding website<br />
+                  kindly scan the QR code to visit<br />
+                  our wedding website<br />
+                  use the RSVP button below to respond<br />
+                  or save the date to your calendar<br />
                   please respond by June 1st · 2026
                 </p>
                 <p className="b-url">milanpatel98.github.io/milanjenniferweds</p>

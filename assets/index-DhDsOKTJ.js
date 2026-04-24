@@ -121,7 +121,7 @@ Error generating stack: `+e.message+`
     font-weight: 300;
     font-size: 7.5px;
     letter-spacing: 5px;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.68);
     text-transform: uppercase;
     text-align: center;
     white-space: nowrap;
@@ -171,7 +171,7 @@ Error generating stack: `+e.message+`
     font-weight: 300;
     font-size: 7.5px;
     letter-spacing: 2.5px;
-    color: rgba(255,255,255,0.45);
+    color: rgba(255,255,255,0.68);
     text-transform: uppercase;
     text-align: center;
     white-space: nowrap;
@@ -196,7 +196,7 @@ Error generating stack: `+e.message+`
     font-weight: 300;
     font-size: 7.5px;
     letter-spacing: 2px;
-    color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.62);
     text-transform: uppercase;
     text-align: center;
     font-variant-numeric: lining-nums;
@@ -219,7 +219,7 @@ Error generating stack: `+e.message+`
   .f-reception {
     font-family: 'The Artisan', cursive;
     font-size: 21px;
-    color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.56);
     text-align: center;
     line-height: 1;
     white-space: nowrap;
@@ -266,7 +266,7 @@ Error generating stack: `+e.message+`
     font-size: 10px;
     font-style: normal;
     font-weight: 300;
-    color: rgba(255,255,255,0.45);
+    color: rgba(255,255,255,0.68);
     text-align: center;
     line-height: 1.7;
     letter-spacing: 2px;
@@ -278,7 +278,7 @@ Error generating stack: `+e.message+`
     font-weight: 300;
     font-style: italic;
     letter-spacing: 0.5px;
-    color: rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.5);
     text-align: center;
     white-space: nowrap;
   }
@@ -304,7 +304,7 @@ Error generating stack: `+e.message+`
   .b-sig {
     font-family: 'The Artisan', cursive;
     font-size: 20px;
-    color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.56);
     text-align: center;
     display: block;
     line-height: 1.1;
@@ -313,7 +313,7 @@ Error generating stack: `+e.message+`
   .b-sig-plus {
     font-family: 'Masculin', cursive;
     font-size: 32px;
-    color: rgba(255,255,255,0.45);
+    color: rgba(255,255,255,0.58);
     text-align: center;
     display: block;
     line-height: 1;
@@ -325,7 +325,7 @@ Error generating stack: `+e.message+`
     font-weight: 300;
     font-size: 9px;
     letter-spacing: 4px;
-    color: rgba(255,255,255,0.32);
+    color: rgba(255,255,255,0.5);
     text-transform: uppercase;
     cursor: pointer;
     user-select: none;
@@ -403,5 +403,5 @@ Error generating stack: `+e.message+`
     gap: 13px;
   }
 
-`;function y(){let[e,t]=(0,l.useState)(!1),[n,r]=(0,l.useState)(!1),i=(0,l.useRef)(!1),a=(0,l.useRef)(null),o=(0,l.useRef)(null),s=(0,l.useRef)(null),c=(0,l.useRef)(null),u=(0,l.useRef)(null);(0,l.useEffect)(()=>{let e=()=>{i.current||(r(!0),setTimeout(()=>r(!1),1900))},t=setTimeout(()=>{e(),u.current=setInterval(e,1e4)},5e3);return()=>{clearTimeout(t),clearInterval(u.current)}},[]);let p=e=>{if(r(!1),clearInterval(u.current),i.current)return;let t=e.currentTarget.getBoundingClientRect(),n=(e.clientX-t.left)/t.width-.5,s=-((e.clientY-t.top)/t.height-.5)*10,c=n*10;a.current&&(a.current.style.transform=`rotateX(${s}deg) rotateY(${c}deg)`,a.current.style.transition=`transform 0.08s ease-out`),o.current&&(o.current.style.transform=`translate(calc(-50% + ${c*12}px), calc(-50% + ${s*-6}px)) rotateX(${s*.6}deg) rotateY(${c*.6}deg)`,o.current.style.transition=`transform 0.08s ease-out`)},h=()=>{i.current||(a.current&&(a.current.style.transform=`rotateX(0deg) rotateY(0deg)`,a.current.style.transition=`transform 0.6s ease`),o.current&&(o.current.style.transform=`translate(-50%, -50%) rotateX(0deg) rotateY(0deg)`,o.current.style.transition=`transform 0.6s ease`))},g=()=>{r(!1),clearInterval(u.current);let e=!i.current;i.current=e,t(e);let n=`transform 1.2s cubic-bezier(0.645,0.045,0.355,1)`;a.current&&(a.current.style.transform=e?`rotateY(180deg)`:`rotateX(0deg) rotateY(0deg)`,a.current.style.transition=n),o.current&&(o.current.style.transform=e?`translate(-50%, -50%) rotateY(180deg)`:`translate(-50%, -50%) rotateX(0deg) rotateY(0deg)`,o.current.style.transition=n)};return(0,m.jsxs)(m.Fragment,{children:[(0,m.jsx)(`style`,{children:v}),(0,m.jsxs)(`div`,{className:`wrapper`,children:[(0,m.jsxs)(`div`,{className:`scene`,onClick:g,onMouseMove:p,onMouseLeave:h,children:[(0,m.jsx)(`div`,{ref:o,className:`glow`,style:{transform:`translate(-50%, -50%)`,transition:`transform 0.6s ease`}}),(0,m.jsxs)(`div`,{ref:a,className:`card${n?` wobble`:``}`,style:{transform:`rotateX(0deg) rotateY(0deg)`,transition:n?`none`:`transform 0.6s ease`},children:[(0,m.jsxs)(`div`,{className:`face front`,ref:s,children:[(0,m.jsx)(`img`,{src:f,alt:``,className:`f-ram`}),(0,m.jsx)(`p`,{className:`f-together`,children:_.together}),(0,m.jsxs)(`div`,{className:`f-top`,children:[(0,m.jsx)(`span`,{className:`f-name1`,children:`Jennifer Huitron`}),(0,m.jsx)(`span`,{className:`f-plus`,children:`+`}),(0,m.jsx)(`span`,{className:`f-name2`,children:`Milan Patel`})]}),(0,m.jsxs)(`div`,{className:`f-mid`,children:[(0,m.jsx)(`p`,{className:`f-request`,children:_.request}),(0,m.jsx)(`p`,{className:`f-date`,children:_.date}),(0,m.jsxs)(`div`,{className:`f-details`,children:[(0,m.jsx)(`span`,{children:_.time}),(0,m.jsx)(`span`,{children:`St Thomas Church`}),(0,m.jsx)(`span`,{children:`1450 S Melrose Dr · Oceanside, CA`})]})]}),(0,m.jsx)(`div`,{className:`f-bottom`,children:(0,m.jsx)(`p`,{className:`f-reception`,children:_.reception})})]}),(0,m.jsxs)(`div`,{className:`face back`,ref:c,children:[(0,m.jsxs)(`div`,{className:`b-top`,children:[(0,m.jsx)(`p`,{className:`b-title`,children:_.backTitle}),(0,m.jsxs)(`p`,{className:`b-body`,children:[_.backBody1,(0,m.jsx)(`br`,{}),_.backBody2,(0,m.jsx)(`br`,{}),_.backBody3]}),(0,m.jsx)(`p`,{className:`b-url`,children:`milanpatel98.github.io/milanjenniferweds`})]}),(0,m.jsxs)(`div`,{className:`b-main`,children:[(0,m.jsx)(`a`,{className:`qr-wrap`,href:`https://milanpatel98.github.io/milanjenniferweds`,target:`_blank`,rel:`noopener noreferrer`,onClick:e=>e.stopPropagation(),children:(0,m.jsx)(`img`,{src:d,alt:`QR Code`})}),(0,m.jsxs)(`div`,{className:`b-sigs`,children:[(0,m.jsx)(`span`,{className:`b-sig`,children:`Jennifer`}),(0,m.jsx)(`span`,{className:`b-sig-plus`,children:`+`}),(0,m.jsx)(`span`,{className:`b-sig`,children:`Milan`})]})]})]})]})]}),(0,m.jsx)(`p`,{className:`hint`,onClick:g,children:e?_.flipBack:_.flipHint}),(0,m.jsxs)(`div`,{className:`bottom-bar`,children:[(0,m.jsxs)(`button`,{className:`cal-btn`,onClick:()=>{let e=[`BEGIN:VCALENDAR`,`VERSION:2.0`,`PRODID:-//Milan & Jennifer Wedding//EN`,`BEGIN:VEVENT`,`DTSTART:20260606T130000`,`DTEND:20260606T150000`,`SUMMARY:${_.cerSummary}`,`LOCATION:St Thomas Church\\, 1450 S Melrose Dr\\, Oceanside\\, CA 92056`,`DESCRIPTION:${_.cerDesc}`,`URL:https://milanpatel98.github.io/milanjenniferweds`,`END:VEVENT`,`BEGIN:VEVENT`,`DTSTART:20260606T163000`,`DTEND:20260606T233000`,`SUMMARY:${_.recSummary}`,`LOCATION:Aria Event Hall\\, 740 Nordahl Rd Ste 125\\, San Marcos\\, CA 92069`,`DESCRIPTION:${_.recDesc}`,`URL:https://milanpatel98.github.io/milanjenniferweds`,`END:VEVENT`,`END:VCALENDAR`].join(`\r
+`;function y(){let[e,t]=(0,l.useState)(!1),[n,r]=(0,l.useState)(!1),i=(0,l.useRef)(!1),a=(0,l.useRef)(null),o=(0,l.useRef)(null),s=(0,l.useRef)(null),c=(0,l.useRef)(null),u=(0,l.useRef)(null);(0,l.useEffect)(()=>{let e=()=>{i.current||(r(!0),setTimeout(()=>r(!1),1900))},t=setTimeout(()=>{e(),u.current=setInterval(e,5e3)},2500);return()=>{clearTimeout(t),clearInterval(u.current)}},[]);let p=e=>{if(r(!1),clearInterval(u.current),i.current)return;let t=e.currentTarget.getBoundingClientRect(),n=(e.clientX-t.left)/t.width-.5,s=-((e.clientY-t.top)/t.height-.5)*10,c=n*10;a.current&&(a.current.style.transform=`rotateX(${s}deg) rotateY(${c}deg)`,a.current.style.transition=`transform 0.08s ease-out`),o.current&&(o.current.style.transform=`translate(calc(-50% + ${c*12}px), calc(-50% + ${s*-6}px)) rotateX(${s*.6}deg) rotateY(${c*.6}deg)`,o.current.style.transition=`transform 0.08s ease-out`)},h=()=>{i.current||(a.current&&(a.current.style.transform=`rotateX(0deg) rotateY(0deg)`,a.current.style.transition=`transform 0.6s ease`),o.current&&(o.current.style.transform=`translate(-50%, -50%) rotateX(0deg) rotateY(0deg)`,o.current.style.transition=`transform 0.6s ease`))},g=()=>{r(!1),clearInterval(u.current);let e=!i.current;i.current=e,t(e);let n=`transform 1.2s cubic-bezier(0.645,0.045,0.355,1)`;a.current&&(a.current.style.transform=e?`rotateY(180deg)`:`rotateX(0deg) rotateY(0deg)`,a.current.style.transition=n),o.current&&(o.current.style.transform=e?`translate(-50%, -50%) rotateY(180deg)`:`translate(-50%, -50%) rotateX(0deg) rotateY(0deg)`,o.current.style.transition=n)};return(0,m.jsxs)(m.Fragment,{children:[(0,m.jsx)(`style`,{children:v}),(0,m.jsxs)(`div`,{className:`wrapper`,children:[(0,m.jsxs)(`div`,{className:`scene`,onClick:g,onMouseMove:p,onMouseLeave:h,children:[(0,m.jsx)(`div`,{ref:o,className:`glow`,style:{transform:`translate(-50%, -50%)`,transition:`transform 0.6s ease`}}),(0,m.jsxs)(`div`,{ref:a,className:`card${n?` wobble`:``}`,style:{transform:`rotateX(0deg) rotateY(0deg)`,transition:n?`none`:`transform 0.6s ease`},children:[(0,m.jsxs)(`div`,{className:`face front`,ref:s,children:[(0,m.jsx)(`img`,{src:f,alt:``,className:`f-ram`}),(0,m.jsx)(`p`,{className:`f-together`,children:_.together}),(0,m.jsxs)(`div`,{className:`f-top`,children:[(0,m.jsx)(`span`,{className:`f-name1`,children:`Jennifer Huitron`}),(0,m.jsx)(`span`,{className:`f-plus`,children:`+`}),(0,m.jsx)(`span`,{className:`f-name2`,children:`Milan Patel`})]}),(0,m.jsxs)(`div`,{className:`f-mid`,children:[(0,m.jsx)(`p`,{className:`f-request`,children:_.request}),(0,m.jsx)(`p`,{className:`f-date`,children:_.date}),(0,m.jsxs)(`div`,{className:`f-details`,children:[(0,m.jsx)(`span`,{children:_.time}),(0,m.jsx)(`span`,{children:`St Thomas Church`}),(0,m.jsx)(`span`,{children:`1450 S Melrose Dr · Oceanside, CA`})]})]}),(0,m.jsx)(`div`,{className:`f-bottom`,children:(0,m.jsx)(`p`,{className:`f-reception`,children:_.reception})})]}),(0,m.jsxs)(`div`,{className:`face back`,ref:c,children:[(0,m.jsxs)(`div`,{className:`b-top`,children:[(0,m.jsx)(`p`,{className:`b-title`,children:_.backTitle}),(0,m.jsxs)(`p`,{className:`b-body`,children:[_.backBody1,(0,m.jsx)(`br`,{}),_.backBody2,(0,m.jsx)(`br`,{}),_.backBody3]}),(0,m.jsx)(`p`,{className:`b-url`,children:`milanpatel98.github.io/milanjenniferweds`})]}),(0,m.jsxs)(`div`,{className:`b-main`,children:[(0,m.jsx)(`a`,{className:`qr-wrap`,href:`https://milanpatel98.github.io/milanjenniferweds`,target:`_blank`,rel:`noopener noreferrer`,onClick:e=>e.stopPropagation(),children:(0,m.jsx)(`img`,{src:d,alt:`QR Code`})}),(0,m.jsxs)(`div`,{className:`b-sigs`,children:[(0,m.jsx)(`span`,{className:`b-sig`,children:`Jennifer`}),(0,m.jsx)(`span`,{className:`b-sig-plus`,children:`+`}),(0,m.jsx)(`span`,{className:`b-sig`,children:`Milan`})]})]})]})]})]}),(0,m.jsx)(`p`,{className:`hint`,onClick:g,children:e?_.flipBack:_.flipHint}),(0,m.jsxs)(`div`,{className:`bottom-bar`,children:[(0,m.jsxs)(`button`,{className:`cal-btn`,onClick:()=>{let e=[`BEGIN:VCALENDAR`,`VERSION:2.0`,`PRODID:-//Milan & Jennifer Wedding//EN`,`BEGIN:VEVENT`,`DTSTART:20260606T130000`,`DTEND:20260606T150000`,`SUMMARY:${_.cerSummary}`,`LOCATION:St Thomas Church\\, 1450 S Melrose Dr\\, Oceanside\\, CA 92056`,`DESCRIPTION:${_.cerDesc}`,`URL:https://milanpatel98.github.io/milanjenniferweds`,`END:VEVENT`,`BEGIN:VEVENT`,`DTSTART:20260606T163000`,`DTEND:20260606T233000`,`SUMMARY:${_.recSummary}`,`LOCATION:Aria Event Hall\\, 740 Nordahl Rd Ste 125\\, San Marcos\\, CA 92069`,`DESCRIPTION:${_.recDesc}`,`URL:https://milanpatel98.github.io/milanjenniferweds`,`END:VEVENT`,`END:VCALENDAR`].join(`\r
 `),t=new Blob([e],{type:`text/calendar;charset=utf-8`}),n=URL.createObjectURL(t),r=document.createElement(`a`);r.href=n,r.download=`jennifer-milan-wedding.ics`,r.click(),URL.revokeObjectURL(n)},children:[(0,m.jsxs)(`svg`,{width:`13`,height:`13`,viewBox:`0 0 24 24`,fill:`none`,stroke:`currentColor`,strokeWidth:`1.5`,strokeLinecap:`round`,strokeLinejoin:`round`,children:[(0,m.jsx)(`rect`,{x:`3`,y:`4`,width:`18`,height:`18`,rx:`2`}),(0,m.jsx)(`line`,{x1:`16`,y1:`2`,x2:`16`,y2:`6`}),(0,m.jsx)(`line`,{x1:`8`,y1:`2`,x2:`8`,y2:`6`}),(0,m.jsx)(`line`,{x1:`3`,y1:`10`,x2:`21`,y2:`10`})]}),_.calBtn]}),(0,m.jsxs)(`a`,{className:`rsvp-btn`,href:`https://milanpatel98.github.io/milanjenniferweds`,target:`_blank`,rel:`noopener noreferrer`,children:[_.rsvpBtn,(0,m.jsxs)(`svg`,{width:`14`,height:`14`,viewBox:`0 0 24 24`,fill:`none`,stroke:`currentColor`,strokeWidth:`1.5`,strokeLinecap:`round`,strokeLinejoin:`round`,children:[(0,m.jsx)(`line`,{x1:`5`,y1:`12`,x2:`19`,y2:`12`}),(0,m.jsx)(`polyline`,{points:`12 5 19 12 12 19`})]})]})]})]})]})}function b(){return(0,m.jsx)(y,{})}(0,u.createRoot)(document.getElementById(`root`)).render((0,m.jsx)(l.StrictMode,{children:(0,m.jsx)(b,{})}));

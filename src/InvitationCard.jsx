@@ -303,36 +303,6 @@ const css = `
   }
   .hint:hover { color: rgba(255,255,255,0.6); }
 
-  .cal-btn {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 7px;
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
-    font-size: 9px;
-    letter-spacing: 1.5px;
-    color: rgba(255,248,230,0.45);
-    text-transform: uppercase;
-    cursor: pointer;
-    user-select: none;
-    background: none;
-    border: none;
-    outline: none;
-    padding: 6px 0;
-    white-space: nowrap;
-    border-right: 1px solid rgba(255,255,255,0.12);
-    transition: color 0.3s;
-  }
-  .cal-btn:hover { color: rgba(255,248,230,0.85); }
-  .cal-btn svg {
-    opacity: 0.55;
-    transition: opacity 0.3s;
-    flex-shrink: 0;
-  }
-  .cal-btn:hover svg { opacity: 1; }
-
   .bottom-bar {
     position: fixed;
     bottom: 0;
@@ -348,27 +318,61 @@ const css = `
     border-top: 1px solid rgba(255,255,255,0.07);
   }
 
+  .cal-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 15px;
+    letter-spacing: 0;
+    color: rgba(255,248,230,0.45);
+    cursor: pointer;
+    user-select: none;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 4px 0;
+    white-space: nowrap;
+    border-right: 1px solid rgba(255,255,255,0.12);
+    transition: color 0.3s;
+  }
+  .cal-btn:hover { color: rgba(255,248,230,0.85); }
+  .cal-btn svg {
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    flex-shrink: 0;
+  }
+  .cal-btn:hover svg { opacity: 1; }
+
   .rsvp-btn {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 8px;
     font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
     font-weight: 300;
-    font-size: 9px;
-    letter-spacing: 4px;
+    font-size: 15px;
+    letter-spacing: 0;
     color: rgba(255,248,230,0.75);
-    text-transform: uppercase;
     text-decoration: none;
     cursor: pointer;
     background: none;
     border: none;
     outline: none;
-    padding: 6px 0;
+    padding: 4px 0;
     white-space: nowrap;
-    transition: color 0.3s;
+    transition: color 0.3s, gap 0.3s;
   }
-  .rsvp-btn:hover { color: rgba(255,248,230,1); }
+  .rsvp-btn:hover {
+    color: rgba(255,248,230,1);
+    gap: 13px;
+  }
 
 `;
 
@@ -542,6 +546,9 @@ export default function InvitationCard() {
         </p>
         <div className="bottom-bar">
           <button className="cal-btn" onClick={addToCalendar}>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
             Add to Calendar
           </button>
           <a
@@ -551,6 +558,9 @@ export default function InvitationCard() {
             rel="noopener noreferrer"
           >
             RSVP
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
           </a>
         </div>
       </div>

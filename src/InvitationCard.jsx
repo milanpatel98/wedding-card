@@ -217,7 +217,7 @@ const css = `
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 44px 36px 40px;
+    padding: 64px 36px 60px;
   }
 
   .b-top {

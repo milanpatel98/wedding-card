@@ -2,19 +2,21 @@ import { useState, useRef } from "react";
 import { toPng } from "html-to-image"; // kept for future use
 import ramImg from "./assets/ram.png";
 
+const base = import.meta.env.BASE_URL;
+
 const css = `
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
   @font-face {
     font-family: 'The Artisan';
-    src: url('/the-artisan.otf') format('opentype');
+    src: url('${base}the-artisan.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
   }
 
   @font-face {
     font-family: 'Masculin';
-    src: url('/Masculin.otf') format('opentype');
+    src: url('${base}Masculin.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
   }
@@ -407,7 +409,7 @@ export default function InvitationCard() {
               </p>
               <p className="b-url">milanpatel98.github.io/milanjenniferweds</p>
               <div className="qr-wrap">
-                <img src="/wedding_qr.svg" alt="QR Code" />
+                  <img src={`${base}wedding_qr.svg`} alt="QR Code" />
               </div>
               <div className="b-sigs">
                 <span className="b-sig">Jennifer</span>

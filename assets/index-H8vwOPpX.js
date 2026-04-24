@@ -41,6 +41,61 @@ Error generating stack: `+e.message+`
     align-items: center;
     justify-content: center;
     padding: 40px 20px 100px;
+    transition: background 0.5s ease;
+  }
+
+  .wrapper.light {
+    background: radial-gradient(ellipse at center, #fff9ee 0%, #efe4d4 58%, #dfd0bd 100%);
+  }
+
+  .theme-toggle {
+    position: fixed;
+    top: calc(16px + env(safe-area-inset-top));
+    right: 16px;
+    z-index: 120;
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255,248,230,0.14);
+    border-radius: 50%;
+    background: linear-gradient(145deg, rgba(255,255,255,0.065), rgba(255,255,255,0.015));
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    cursor: pointer;
+    color: rgba(255,248,230,0.72);
+    box-shadow: 0 14px 34px rgba(0,0,0,0.24), inset 0 1px 0 rgba(255,255,255,0.06);
+    transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .theme-icon {
+    width: 15px;
+    height: 15px;
+    stroke: currentColor;
+    stroke-width: 1.35;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.9;
+  }
+
+  .theme-toggle:hover {
+    transform: translateY(-1px);
+    border-color: rgba(255,248,230,0.28);
+    color: rgba(255,248,230,0.95);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08);
+  }
+
+  .wrapper.light .theme-toggle {
+    border-color: rgba(35,25,18,0.18);
+    background: linear-gradient(145deg, rgba(255,255,255,0.44), rgba(255,255,255,0.14));
+    color: rgba(35,25,18,0.72);
+    box-shadow: 0 14px 32px rgba(72,50,28,0.14), inset 0 1px 0 rgba(255,255,255,0.55);
+  }
+
+  .wrapper.light .theme-toggle:hover {
+    border-color: rgba(35,25,18,0.28);
+    color: rgba(35,25,18,0.95);
   }
 
   .glow {
@@ -58,6 +113,14 @@ Error generating stack: `+e.message+`
     z-index: 0;
     filter: blur(60px);
     will-change: transform;
+  }
+
+  .wrapper.light .glow {
+    background: radial-gradient(ellipse,
+      rgba(255,255,255,0.45) 0%,
+      rgba(255,238,205,0.18) 42%,
+      transparent 100%
+    );
   }
 
   .scene {
@@ -98,6 +161,11 @@ Error generating stack: `+e.message+`
     -webkit-backface-visibility: hidden;
     overflow: hidden;
     box-shadow: 0 40px 80px rgba(0,0,0,0.95);
+    transition: background 0.5s ease, box-shadow 0.5s ease;
+  }
+
+  .wrapper.light .face {
+    box-shadow: 0 34px 70px rgba(72,50,28,0.22);
   }
 
   /* FRONT */
@@ -109,11 +177,21 @@ Error generating stack: `+e.message+`
     padding: 44px 40px 38px;
   }
 
+  .wrapper.light .front,
+  .wrapper.light .back {
+    background: #f4eadc;
+  }
+
   .f-ram {
     display: block;
     width: 55px;
     margin: 0 auto 10px;
     opacity: 0.5;
+  }
+
+  .wrapper.light .f-ram {
+    filter: invert(1);
+    opacity: 0.34;
   }
 
   .f-together {
@@ -225,6 +303,29 @@ Error generating stack: `+e.message+`
     white-space: nowrap;
   }
 
+  .wrapper.light .f-name1,
+  .wrapper.light .f-name2,
+  .wrapper.light .f-date {
+    color: rgba(28,22,18,0.94);
+  }
+
+  .wrapper.light .f-plus {
+    color: rgba(28,22,18,0.55);
+  }
+
+  .wrapper.light .f-together,
+  .wrapper.light .f-request {
+    color: rgba(28,22,18,0.6);
+  }
+
+  .wrapper.light .f-details {
+    color: rgba(28,22,18,0.56);
+  }
+
+  .wrapper.light .f-reception {
+    color: rgba(28,22,18,0.5);
+  }
+
   /* BACK */
   .back {
     background: #121212;
@@ -295,6 +396,8 @@ Error generating stack: `+e.message+`
 
   .qr-wrap img { width: 100%; height: 100%; filter: invert(1); }
 
+  .wrapper.light .qr-wrap img { filter: none; }
+
   .b-sigs {
     display: flex;
     flex-direction: column;
@@ -319,6 +422,26 @@ Error generating stack: `+e.message+`
     line-height: 1;
   }
 
+  .wrapper.light .b-title {
+    color: rgba(28,22,18,0.8);
+  }
+
+  .wrapper.light .b-body {
+    color: rgba(28,22,18,0.62);
+  }
+
+  .wrapper.light .b-url {
+    color: rgba(28,22,18,0.48);
+  }
+
+  .wrapper.light .b-sig {
+    color: rgba(28,22,18,0.5);
+  }
+
+  .wrapper.light .b-sig-plus {
+    color: rgba(28,22,18,0.55);
+  }
+
   .hint {
     margin-top: 22px;
     font-family: 'Cormorant Garamond', serif;
@@ -334,6 +457,14 @@ Error generating stack: `+e.message+`
   }
   .hint:hover { color: rgba(255,255,255,0.6); }
 
+  .wrapper.light .hint {
+    color: rgba(28,22,18,0.55);
+  }
+
+  .wrapper.light .hint:hover {
+    color: rgba(28,22,18,0.78);
+  }
+
   .bottom-bar {
     position: fixed;
     bottom: 0;
@@ -347,6 +478,12 @@ Error generating stack: `+e.message+`
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-top: 1px solid rgba(255,255,255,0.07);
+    transition: background 0.5s ease, border-color 0.5s ease;
+  }
+
+  .wrapper.light .bottom-bar {
+    background: rgba(244,234,220,0.86);
+    border-top-color: rgba(35,25,18,0.1);
   }
 
   .cal-btn {
@@ -378,6 +515,15 @@ Error generating stack: `+e.message+`
   }
   .cal-btn:hover svg { opacity: 1; }
 
+  .wrapper.light .cal-btn {
+    color: rgba(35,25,18,0.58);
+    border-right-color: rgba(35,25,18,0.14);
+  }
+
+  .wrapper.light .cal-btn:hover {
+    color: rgba(35,25,18,0.9);
+  }
+
   .rsvp-btn {
     flex: 1;
     display: flex;
@@ -403,5 +549,13 @@ Error generating stack: `+e.message+`
     gap: 13px;
   }
 
-`;function y(){let[e,t]=(0,l.useState)(!1),[n,r]=(0,l.useState)(!1),i=(0,l.useRef)(!1),a=(0,l.useRef)(null),o=(0,l.useRef)(null),s=(0,l.useRef)(null),c=(0,l.useRef)(null),u=(0,l.useRef)(null);(0,l.useEffect)(()=>{let e=()=>{i.current||(r(!0),setTimeout(()=>r(!1),1900))},t=setTimeout(()=>{e(),u.current=setInterval(e,5e3)},2500);return()=>{clearTimeout(t),clearInterval(u.current)}},[]);let p=e=>{if(r(!1),clearInterval(u.current),i.current)return;let t=e.currentTarget.getBoundingClientRect(),n=(e.clientX-t.left)/t.width-.5,s=-((e.clientY-t.top)/t.height-.5)*10,c=n*10;a.current&&(a.current.style.transform=`rotateX(${s}deg) rotateY(${c}deg)`,a.current.style.transition=`transform 0.08s ease-out`),o.current&&(o.current.style.transform=`translate(calc(-50% + ${c*12}px), calc(-50% + ${s*-6}px)) rotateX(${s*.6}deg) rotateY(${c*.6}deg)`,o.current.style.transition=`transform 0.08s ease-out`)},h=()=>{i.current||(a.current&&(a.current.style.transform=`rotateX(0deg) rotateY(0deg)`,a.current.style.transition=`transform 0.6s ease`),o.current&&(o.current.style.transform=`translate(-50%, -50%) rotateX(0deg) rotateY(0deg)`,o.current.style.transition=`transform 0.6s ease`))},g=()=>{r(!1),clearInterval(u.current);let e=!i.current;i.current=e,t(e);let n=`transform 1.2s cubic-bezier(0.645,0.045,0.355,1)`;a.current&&(a.current.style.transform=e?`rotateY(180deg)`:`rotateX(0deg) rotateY(0deg)`,a.current.style.transition=n),o.current&&(o.current.style.transform=e?`translate(-50%, -50%) rotateY(180deg)`:`translate(-50%, -50%) rotateX(0deg) rotateY(0deg)`,o.current.style.transition=n)};return(0,m.jsxs)(m.Fragment,{children:[(0,m.jsx)(`style`,{children:v}),(0,m.jsxs)(`div`,{className:`wrapper`,children:[(0,m.jsxs)(`div`,{className:`scene`,onClick:g,onMouseMove:p,onMouseLeave:h,children:[(0,m.jsx)(`div`,{ref:o,className:`glow`,style:{transform:`translate(-50%, -50%)`,transition:`transform 0.6s ease`}}),(0,m.jsxs)(`div`,{ref:a,className:`card${n?` wobble`:``}`,style:{transform:`rotateX(0deg) rotateY(0deg)`,transition:n?`none`:`transform 0.6s ease`},children:[(0,m.jsxs)(`div`,{className:`face front`,ref:s,children:[(0,m.jsx)(`img`,{src:f,alt:``,className:`f-ram`}),(0,m.jsx)(`p`,{className:`f-together`,children:_.together}),(0,m.jsxs)(`div`,{className:`f-top`,children:[(0,m.jsx)(`span`,{className:`f-name1`,children:`Jennifer Huitron`}),(0,m.jsx)(`span`,{className:`f-plus`,children:`+`}),(0,m.jsx)(`span`,{className:`f-name2`,children:`Milan Patel`})]}),(0,m.jsxs)(`div`,{className:`f-mid`,children:[(0,m.jsx)(`p`,{className:`f-request`,children:_.request}),(0,m.jsx)(`p`,{className:`f-date`,children:_.date}),(0,m.jsxs)(`div`,{className:`f-details`,children:[(0,m.jsx)(`span`,{children:_.time}),(0,m.jsx)(`span`,{children:`St Thomas Church`}),(0,m.jsx)(`span`,{children:`1450 S Melrose Dr · Oceanside, CA`})]})]}),(0,m.jsx)(`div`,{className:`f-bottom`,children:(0,m.jsx)(`p`,{className:`f-reception`,children:_.reception})})]}),(0,m.jsxs)(`div`,{className:`face back`,ref:c,children:[(0,m.jsxs)(`div`,{className:`b-top`,children:[(0,m.jsx)(`p`,{className:`b-title`,children:_.backTitle}),(0,m.jsxs)(`p`,{className:`b-body`,children:[_.backBody1,(0,m.jsx)(`br`,{}),_.backBody2,(0,m.jsx)(`br`,{}),_.backBody3]}),(0,m.jsx)(`p`,{className:`b-url`,children:`milanpatel98.github.io/milanjenniferweds`})]}),(0,m.jsxs)(`div`,{className:`b-main`,children:[(0,m.jsx)(`a`,{className:`qr-wrap`,href:`https://milanpatel98.github.io/milanjenniferweds`,target:`_blank`,rel:`noopener noreferrer`,onClick:e=>e.stopPropagation(),children:(0,m.jsx)(`img`,{src:d,alt:`QR Code`})}),(0,m.jsxs)(`div`,{className:`b-sigs`,children:[(0,m.jsx)(`span`,{className:`b-sig`,children:`Jennifer`}),(0,m.jsx)(`span`,{className:`b-sig-plus`,children:`+`}),(0,m.jsx)(`span`,{className:`b-sig`,children:`Milan`})]})]})]})]})]}),(0,m.jsx)(`p`,{className:`hint`,onClick:g,children:e?_.flipBack:_.flipHint}),(0,m.jsxs)(`div`,{className:`bottom-bar`,children:[(0,m.jsxs)(`button`,{className:`cal-btn`,onClick:()=>{let e=[`BEGIN:VCALENDAR`,`VERSION:2.0`,`PRODID:-//Milan & Jennifer Wedding//EN`,`BEGIN:VEVENT`,`DTSTART:20260606T130000`,`DTEND:20260606T150000`,`SUMMARY:${_.cerSummary}`,`LOCATION:St Thomas Church\\, 1450 S Melrose Dr\\, Oceanside\\, CA 92056`,`DESCRIPTION:${_.cerDesc}`,`URL:https://milanpatel98.github.io/milanjenniferweds`,`END:VEVENT`,`BEGIN:VEVENT`,`DTSTART:20260606T163000`,`DTEND:20260606T233000`,`SUMMARY:${_.recSummary}`,`LOCATION:Aria Event Hall\\, 740 Nordahl Rd Ste 125\\, San Marcos\\, CA 92069`,`DESCRIPTION:${_.recDesc}`,`URL:https://milanpatel98.github.io/milanjenniferweds`,`END:VEVENT`,`END:VCALENDAR`].join(`\r
+  .wrapper.light .rsvp-btn {
+    color: rgba(35,25,18,0.76);
+  }
+
+  .wrapper.light .rsvp-btn:hover {
+    color: rgba(35,25,18,1);
+  }
+
+`;function y(){let[e,t]=(0,l.useState)(!1),[n,r]=(0,l.useState)(!1),[i,a]=(0,l.useState)(!1),o=(0,l.useRef)(!1),s=(0,l.useRef)(null),c=(0,l.useRef)(null),u=(0,l.useRef)(null),p=(0,l.useRef)(null),h=(0,l.useRef)(null);(0,l.useEffect)(()=>{let e=()=>{o.current||(r(!0),setTimeout(()=>r(!1),1900))},t=setTimeout(()=>{e(),h.current=setInterval(e,5e3)},2500);return()=>{clearTimeout(t),clearInterval(h.current)}},[]);let g=e=>{if(r(!1),clearInterval(h.current),o.current)return;let t=e.currentTarget.getBoundingClientRect(),n=(e.clientX-t.left)/t.width-.5,i=-((e.clientY-t.top)/t.height-.5)*10,a=n*10;s.current&&(s.current.style.transform=`rotateX(${i}deg) rotateY(${a}deg)`,s.current.style.transition=`transform 0.08s ease-out`),c.current&&(c.current.style.transform=`translate(calc(-50% + ${a*12}px), calc(-50% + ${i*-6}px)) rotateX(${i*.6}deg) rotateY(${a*.6}deg)`,c.current.style.transition=`transform 0.08s ease-out`)},y=()=>{o.current||(s.current&&(s.current.style.transform=`rotateX(0deg) rotateY(0deg)`,s.current.style.transition=`transform 0.6s ease`),c.current&&(c.current.style.transform=`translate(-50%, -50%) rotateX(0deg) rotateY(0deg)`,c.current.style.transition=`transform 0.6s ease`))},b=()=>{r(!1),clearInterval(h.current);let e=!o.current;o.current=e,t(e);let n=`transform 1.2s cubic-bezier(0.645,0.045,0.355,1)`;s.current&&(s.current.style.transform=e?`rotateY(180deg)`:`rotateX(0deg) rotateY(0deg)`,s.current.style.transition=n),c.current&&(c.current.style.transform=e?`translate(-50%, -50%) rotateY(180deg)`:`translate(-50%, -50%) rotateX(0deg) rotateY(0deg)`,c.current.style.transition=n)};return(0,m.jsxs)(m.Fragment,{children:[(0,m.jsx)(`style`,{children:v}),(0,m.jsxs)(`div`,{className:`wrapper${i?` light`:``}`,children:[(0,m.jsx)(`button`,{className:`theme-toggle`,type:`button`,"aria-label":i?`Switch to dark mode`:`Switch to light mode`,onClick:()=>a(e=>!e),children:i?(0,m.jsxs)(`svg`,{className:`theme-icon`,viewBox:`0 0 24 24`,"aria-hidden":`true`,children:[(0,m.jsx)(`circle`,{cx:`12`,cy:`12`,r:`3.5`}),(0,m.jsx)(`path`,{d:`M12 2.8v2.1M12 19.1v2.1M4.9 4.9l1.5 1.5M17.6 17.6l1.5 1.5M2.8 12h2.1M19.1 12h2.1M4.9 19.1l1.5-1.5M17.6 6.4l1.5-1.5`})]}):(0,m.jsx)(`svg`,{className:`theme-icon`,viewBox:`0 0 24 24`,"aria-hidden":`true`,children:(0,m.jsx)(`path`,{d:`M18.7 15.7A7.6 7.6 0 0 1 8.3 5.3 7.8 7.8 0 1 0 18.7 15.7Z`})})}),(0,m.jsxs)(`div`,{className:`scene`,onClick:b,onMouseMove:g,onMouseLeave:y,children:[(0,m.jsx)(`div`,{ref:c,className:`glow`,style:{transform:`translate(-50%, -50%)`,transition:`transform 0.6s ease`}}),(0,m.jsxs)(`div`,{ref:s,className:`card${n?` wobble`:``}`,style:{transform:`rotateX(0deg) rotateY(0deg)`,transition:n?`none`:`transform 0.6s ease`},children:[(0,m.jsxs)(`div`,{className:`face front`,ref:u,children:[(0,m.jsx)(`img`,{src:f,alt:``,className:`f-ram`}),(0,m.jsx)(`p`,{className:`f-together`,children:_.together}),(0,m.jsxs)(`div`,{className:`f-top`,children:[(0,m.jsx)(`span`,{className:`f-name1`,children:`Jennifer Huitron`}),(0,m.jsx)(`span`,{className:`f-plus`,children:`+`}),(0,m.jsx)(`span`,{className:`f-name2`,children:`Milan Patel`})]}),(0,m.jsxs)(`div`,{className:`f-mid`,children:[(0,m.jsx)(`p`,{className:`f-request`,children:_.request}),(0,m.jsx)(`p`,{className:`f-date`,children:_.date}),(0,m.jsxs)(`div`,{className:`f-details`,children:[(0,m.jsx)(`span`,{children:_.time}),(0,m.jsx)(`span`,{children:`St Thomas Church`}),(0,m.jsx)(`span`,{children:`1450 S Melrose Dr · Oceanside, CA`})]})]}),(0,m.jsx)(`div`,{className:`f-bottom`,children:(0,m.jsx)(`p`,{className:`f-reception`,children:_.reception})})]}),(0,m.jsxs)(`div`,{className:`face back`,ref:p,children:[(0,m.jsxs)(`div`,{className:`b-top`,children:[(0,m.jsx)(`p`,{className:`b-title`,children:_.backTitle}),(0,m.jsxs)(`p`,{className:`b-body`,children:[_.backBody1,(0,m.jsx)(`br`,{}),_.backBody2,(0,m.jsx)(`br`,{}),_.backBody3]}),(0,m.jsx)(`p`,{className:`b-url`,children:`milanpatel98.github.io/milanjenniferweds`})]}),(0,m.jsxs)(`div`,{className:`b-main`,children:[(0,m.jsx)(`a`,{className:`qr-wrap`,href:`https://milanpatel98.github.io/milanjenniferweds`,target:`_blank`,rel:`noopener noreferrer`,onClick:e=>e.stopPropagation(),children:(0,m.jsx)(`img`,{src:d,alt:`QR Code`})}),(0,m.jsxs)(`div`,{className:`b-sigs`,children:[(0,m.jsx)(`span`,{className:`b-sig`,children:`Jennifer`}),(0,m.jsx)(`span`,{className:`b-sig-plus`,children:`+`}),(0,m.jsx)(`span`,{className:`b-sig`,children:`Milan`})]})]})]})]})]}),(0,m.jsx)(`p`,{className:`hint`,onClick:b,children:e?_.flipBack:_.flipHint}),(0,m.jsxs)(`div`,{className:`bottom-bar`,children:[(0,m.jsxs)(`button`,{className:`cal-btn`,onClick:()=>{let e=[`BEGIN:VCALENDAR`,`VERSION:2.0`,`PRODID:-//Milan & Jennifer Wedding//EN`,`BEGIN:VEVENT`,`DTSTART:20260606T130000`,`DTEND:20260606T150000`,`SUMMARY:${_.cerSummary}`,`LOCATION:St Thomas Church\\, 1450 S Melrose Dr\\, Oceanside\\, CA 92056`,`DESCRIPTION:${_.cerDesc}`,`URL:https://milanpatel98.github.io/milanjenniferweds`,`END:VEVENT`,`BEGIN:VEVENT`,`DTSTART:20260606T163000`,`DTEND:20260606T233000`,`SUMMARY:${_.recSummary}`,`LOCATION:Aria Event Hall\\, 740 Nordahl Rd Ste 125\\, San Marcos\\, CA 92069`,`DESCRIPTION:${_.recDesc}`,`URL:https://milanpatel98.github.io/milanjenniferweds`,`END:VEVENT`,`END:VCALENDAR`].join(`\r
 `),t=new Blob([e],{type:`text/calendar;charset=utf-8`}),n=URL.createObjectURL(t),r=document.createElement(`a`);r.href=n,r.download=`jennifer-milan-wedding.ics`,r.click(),URL.revokeObjectURL(n)},children:[(0,m.jsxs)(`svg`,{width:`13`,height:`13`,viewBox:`0 0 24 24`,fill:`none`,stroke:`currentColor`,strokeWidth:`1.5`,strokeLinecap:`round`,strokeLinejoin:`round`,children:[(0,m.jsx)(`rect`,{x:`3`,y:`4`,width:`18`,height:`18`,rx:`2`}),(0,m.jsx)(`line`,{x1:`16`,y1:`2`,x2:`16`,y2:`6`}),(0,m.jsx)(`line`,{x1:`8`,y1:`2`,x2:`8`,y2:`6`}),(0,m.jsx)(`line`,{x1:`3`,y1:`10`,x2:`21`,y2:`10`})]}),_.calBtn]}),(0,m.jsxs)(`a`,{className:`rsvp-btn`,href:`https://milanpatel98.github.io/milanjenniferweds`,target:`_blank`,rel:`noopener noreferrer`,children:[_.rsvpBtn,(0,m.jsxs)(`svg`,{width:`14`,height:`14`,viewBox:`0 0 24 24`,fill:`none`,stroke:`currentColor`,strokeWidth:`1.5`,strokeLinecap:`round`,strokeLinejoin:`round`,children:[(0,m.jsx)(`line`,{x1:`5`,y1:`12`,x2:`19`,y2:`12`}),(0,m.jsx)(`polyline`,{points:`12 5 19 12 12 19`})]})]})]})]})]})}function b(){return(0,m.jsx)(y,{})}(0,u.createRoot)(document.getElementById(`root`)).render((0,m.jsx)(l.StrictMode,{children:(0,m.jsx)(b,{})}));

@@ -1,9 +1,33 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { toPng } from "html-to-image"; // kept for future use
 import qrUrl from "./assets/wedding_qr.svg";
 import ramImg from "./assets/ram.png";
 
 const base = import.meta.env.BASE_URL;
+
+const es = typeof navigator !== "undefined" && navigator.language.toLowerCase().startsWith("es");
+
+const t = {
+  together:    es ? "Junto con sus familias"              : "Together with their families",
+  request:     es ? "Solicitan el honor de su compañía"   : "Request the pleasure of your company",
+  date:        es ? <>El Verano de<br />Dos Mil Veintiséis</>  : <>The Summer of<br />Twenty Twenty Six</>,
+  time:        es ? "1:00 de la Tarde"                    : "1:00 in the Afternoon",
+  reception:   es ? "recepción a continuación"            : "reception to follow",
+  backTitle:   es ? "Nuestro Sitio de Boda"               : "Our Wedding Website",
+  backBody1:   es ? "escanee el código QR o use los botones de abajo"  : "scan the QR code or use the buttons below",
+  backBody2:   es ? "para confirmar asistencia y más información"       : "to RSVP for date, venue & full details",
+  backBody3:   es ? "por favor responda antes del 30 de mayo · 2026"   : "please respond by May 30th · 2026",
+  flipHint:    es ? "toca para voltear →"                 : "tap to flip →",
+  flipBack:    es ? "← voltear"                           : "← flip back",
+  calBtn:      es ? "Agregar al Calendario"               : "Add to Calendar",
+  rsvpBtn:     es ? "Confirmar"                           : "RSVP",
+  cerSummary:  es ? "Ceremonia de Boda · Jennifer & Milan" : "Jennifer & Milan's Wedding Ceremony",
+  cerDesc:     es ? "Por favor únanse a la boda de Jennifer Huitron y Milan Patel. Confirmen su asistencia antes del 30 de mayo · 2026."
+                  : "Please join us for the wedding of Jennifer Huitron and Milan Patel. Kindly RSVP by May 30th · 2026.",
+  recSummary:  es ? "Recepción de Boda · Jennifer & Milan" : "Jennifer & Milan's Wedding Reception",
+  recDesc:     es ? "Recepción de boda de Jennifer Huitron y Milan Patel."
+                  : "Reception following the wedding ceremony of Jennifer Huitron and Milan Patel.",
+};
 
 const css = `
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap');
@@ -74,6 +98,20 @@ const css = `
     position: relative;
     transform-style: preserve-3d;
     z-index: 1;
+  }
+
+  @keyframes hintWobble {
+    0%   { transform: rotateX(0deg) rotateY(0deg); }
+    15%  { transform: rotateX(2deg) rotateY(-18deg); }
+    35%  { transform: rotateX(-1deg) rotateY(12deg); }
+    55%  { transform: rotateX(1.5deg) rotateY(-10deg); }
+    75%  { transform: rotateX(-1deg) rotateY(6deg); }
+    90%  { transform: rotateX(0.5deg) rotateY(-3deg); }
+    100% { transform: rotateX(0deg) rotateY(0deg); }
+  }
+
+  .card.wobble {
+    animation: hintWobble 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 
   .face {
@@ -166,12 +204,13 @@ const css = `
   .f-date {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 400;
-    font-size: 22px;
-    letter-spacing: 4px;
+    font-size: 15px;
+    letter-spacing: 3px;
     color: rgba(255,255,255,0.95);
     text-transform: uppercase;
     text-align: center;
-    white-space: nowrap;
+    white-space: normal;
+    line-height: 1.6;
     margin-bottom: 14px;
   }
 
@@ -217,14 +256,14 @@ const css = `
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 76px 36px 72px;
+    padding: 76px 36px 109px;
   }
 
   .b-main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 14px;
+    gap: 10px;
   }
 
   .b-top {
@@ -391,13 +430,37 @@ const css = `
 
 export default function InvitationCard() {
   const [flipped, setFlipped] = useState(false);
+  const [wobble, setWobble] = useState(false);
   const flippedRef = useRef(false);
   const cardRef = useRef(null);
   const glowRef = useRef(null);
   const frontRef = useRef(null);
   const backRef = useRef(null);
 
+  const wobbleIntervalRef = useRef(null);
+
+  useEffect(() => {
+    const triggerWobble = () => {
+      if (!flippedRef.current) {
+        setWobble(true);
+        setTimeout(() => setWobble(false), 1900);
+      }
+    };
+
+    const initialTimer = setTimeout(() => {
+      triggerWobble();
+      wobbleIntervalRef.current = setInterval(triggerWobble, 10000);
+    }, 5000);
+
+    return () => {
+      clearTimeout(initialTimer);
+      clearInterval(wobbleIntervalRef.current);
+    };
+  }, []);
+
   const onMove = (e) => {
+    setWobble(false);
+    clearInterval(wobbleIntervalRef.current);
     if (flippedRef.current) return;
     const r = e.currentTarget.getBoundingClientRect();
     const nx = (e.clientX - r.left) / r.width - 0.5;
@@ -427,6 +490,8 @@ export default function InvitationCard() {
   };
 
   const flip = () => {
+    setWobble(false);
+    clearInterval(wobbleIntervalRef.current);
     const next = !flippedRef.current;
     flippedRef.current = next;
     setFlipped(next);
@@ -458,18 +523,18 @@ export default function InvitationCard() {
       "BEGIN:VEVENT",
       "DTSTART:20260606T130000",
       "DTEND:20260606T150000",
-      "SUMMARY:Jennifer & Milan's Wedding Ceremony",
+      `SUMMARY:${t.cerSummary}`,
       "LOCATION:St Thomas Church\\, 1450 S Melrose Dr\\, Oceanside\\, CA 92056",
-      "DESCRIPTION:Please join us for the wedding of Jennifer Huitron and Milan Patel. Kindly RSVP by May 30th · 2026.",
+      `DESCRIPTION:${t.cerDesc}`,
       "URL:https://milanpatel98.github.io/milanjenniferweds",
       "END:VEVENT",
       // Reception
       "BEGIN:VEVENT",
       "DTSTART:20260606T163000",
       "DTEND:20260606T233000",
-      "SUMMARY:Jennifer & Milan's Wedding Reception",
+      `SUMMARY:${t.recSummary}`,
       "LOCATION:Aria Event Hall\\, 740 Nordahl Rd Ste 125\\, San Marcos\\, CA 92069",
-      "DESCRIPTION:Reception following the wedding ceremony of Jennifer Huitron and Milan Patel.",
+      `DESCRIPTION:${t.recDesc}`,
       "URL:https://milanpatel98.github.io/milanjenniferweds",
       "END:VEVENT",
       "END:VCALENDAR",
@@ -501,69 +566,71 @@ export default function InvitationCard() {
           />
           <div
             ref={cardRef}
-            className="card"
-            style={{ transform: "rotateX(0deg) rotateY(0deg)", transition: "transform 0.6s ease" }}
+            className={`card${wobble ? " wobble" : ""}`}
+            style={{ transform: "rotateX(0deg) rotateY(0deg)", transition: wobble ? "none" : "transform 0.6s ease" }}
           >
 
             <div className="face front" ref={frontRef}>
               <img src={ramImg} alt="" className="f-ram" />
-              <p className="f-together">Together with their families</p>
+              <p className="f-together">{t.together}</p>
               <div className="f-top">
                 <span className="f-name1">Jennifer Huitron</span>
                 <span className="f-plus">+</span>
                 <span className="f-name2">Milan Patel</span>
               </div>
               <div className="f-mid">
-                <p className="f-request">Request the pleasure of your company</p>
-                <p className="f-date">The Sixth of June</p>
+                <p className="f-request">{t.request}</p>
+                <p className="f-date">{t.date}</p>
                 <div className="f-details">
-                  <span>1:00 in the Afternoon</span>
+                  <span>{t.time}</span>
                   <span>St Thomas Church</span>
                   <span>1450 S Melrose Dr · Oceanside, CA</span>
                 </div>
               </div>
               <div className="f-bottom">
-                <p className="f-reception">reception to follow</p>
+                <p className="f-reception">{t.reception}</p>
               </div>
             </div>
 
             <div className="face back" ref={backRef}>
               <div className="b-top">
-                <p className="b-title">Our Wedding Website</p>
+                <p className="b-title">{t.backTitle}</p>
                 <p className="b-body">
-                  kindly scan the QR code or use the<br />
-                  buttons below to RSVP and save the date<br />
-                  please respond by May 30th · 2026
+                  {t.backBody1}<br />
+                  {t.backBody2}<br />
+                  {t.backBody3}
                 </p>
                 <p className="b-url">milanpatel98.github.io/milanjenniferweds</p>
               </div>
-              <a
-                className="qr-wrap"
-                href="https://milanpatel98.github.io/milanjenniferweds"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={e => e.stopPropagation()}
-              >
-                <img src={qrUrl} alt="QR Code" />
-              </a>
-              <div className="b-sigs" style={{ marginTop: "-24px" }}>
-                <span className="b-sig">Jennifer</span>
-                <span className="b-sig-plus">+</span>
-                <span className="b-sig">Milan</span>
+              <div className="b-main">
+                <a
+                  className="qr-wrap"
+                  href="https://milanpatel98.github.io/milanjenniferweds"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={e => e.stopPropagation()}
+                >
+                  <img src={qrUrl} alt="QR Code" />
+                </a>
+                <div className="b-sigs">
+                  <span className="b-sig">Jennifer</span>
+                  <span className="b-sig-plus">+</span>
+                  <span className="b-sig">Milan</span>
+                </div>
               </div>
             </div>
 
           </div>
         </div>
         <p className="hint" onClick={flip}>
-          {flipped ? "← flip back" : "tap to flip →"}
+          {flipped ? t.flipBack : t.flipHint}
         </p>
         <div className="bottom-bar">
           <button className="cal-btn" onClick={addToCalendar}>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
             </svg>
-            Add to Calendar
+            {t.calBtn}
           </button>
           <a
             className="rsvp-btn"
@@ -571,7 +638,7 @@ export default function InvitationCard() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            RSVP
+            {t.rsvpBtn}
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
             </svg>

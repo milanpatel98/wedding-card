@@ -460,7 +460,7 @@ export default function InvitationCard() {
       "DTEND:20260606T150000",
       "SUMMARY:Jennifer & Milan's Wedding Ceremony",
       "LOCATION:St Thomas Church\\, 1450 S Melrose Dr\\, Oceanside\\, CA 92056",
-      "DESCRIPTION:Please join us for the wedding of Jennifer Huitron and Milan Patel.",
+      "DESCRIPTION:Please join us for the wedding of Jennifer Huitron and Milan Patel. Kindly RSVP by May 30th · 2026.",
       "URL:https://milanpatel98.github.io/milanjenniferweds",
       "END:VEVENT",
       // Reception
@@ -535,7 +535,7 @@ export default function InvitationCard() {
                     kindly scan the QR code to RSVP<br />
                     and visit our wedding website<br />
                     use the buttons below to save the date<br />
-                    please respond by June 1st · 2026
+                    please respond by May 30th · 2026
                   </p>
                   <p className="b-url">milanpatel98.github.io/milanjenniferweds</p>
                 </div>

@@ -223,8 +223,8 @@ const css = `
   .b-title {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 300;
-    font-size: 11px;
-    letter-spacing: 7px;
+    font-size: 13px;
+    letter-spacing: 4px;
     color: rgba(255,255,255,0.85);
     text-transform: uppercase;
     text-align: center;
@@ -233,21 +233,21 @@ const css = `
 
   .b-body {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 8.5px;
+    font-size: 11px;
     font-style: normal;
     font-weight: 300;
-    color: rgba(255,255,255,0.38);
+    color: rgba(255,255,255,0.5);
     text-align: center;
     line-height: 2;
-    letter-spacing: 2.5px;
+    letter-spacing: 0.5px;
   }
 
   .b-url {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 7.5px;
+    font-size: 9px;
     font-weight: 300;
-    letter-spacing: 1.5px;
-    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.5px;
+    color: rgba(255,255,255,0.3);
     text-align: center;
     white-space: nowrap;
   }
@@ -515,10 +515,13 @@ export default function InvitationCard() {
             <div className="face back" ref={backRef}>
               <p className="b-title">Our Wedding Website</p>
               <p className="b-body">
-                kindly scan the QR code to RSVP<br />
-                by the first of June · 2026<br />
-                hotel accommodations, transport, and<br />
-                other details are also on the website
+                kindly scan the QR code to visit<br />
+                our wedding website<br />
+                <br />
+                use the buttons below to RSVP<br />
+                or save the date to your calendar<br />
+                <br />
+                RSVP by the first of June · 2026
               </p>
               <p className="b-url">milanpatel98.github.io/milanjenniferweds</p>
                 <a

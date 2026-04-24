@@ -39,7 +39,7 @@ const css = `
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 40px 20px;
+    padding: 40px 20px 100px;
   }
 
   .glow {
@@ -336,6 +336,41 @@ const css = `
   }
   .cal-btn:hover svg { opacity: 1; }
 
+  .rsvp-btn {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: #000;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    background: rgba(255,248,230,0.92);
+    border: none;
+    outline: none;
+    padding: 14px 32px;
+    border-radius: 1px;
+    white-space: nowrap;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+    transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+  }
+  .rsvp-btn:hover {
+    background: rgba(255,255,255,1);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.8), 0 0 30px rgba(255,248,230,0.15);
+    transform: translateX(-50%) translateY(-2px);
+  }
+  .rsvp-btn:active {
+    transform: translateX(-50%) translateY(0px);
+  }
+
 `;
 
 export default function InvitationCard() {
@@ -512,6 +547,15 @@ export default function InvitationCard() {
           </svg>
           Add to Calendar
         </button>
+
+        <a
+          className="rsvp-btn"
+          href="https://milanpatel98.github.io/milanjenniferweds"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          RSVP
+        </a>
       </div>
     </>
   );

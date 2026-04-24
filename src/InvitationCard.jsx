@@ -238,12 +238,8 @@ const css = `
     font-weight: 300;
     color: rgba(255,255,255,0.5);
     text-align: center;
-    line-height: 1.9;
-    letter-spacing: 0.5px;
-  }
-
-  .b-body + .b-body {
-    margin-top: 14px;
+    line-height: 2.2;
+    letter-spacing: 1.8px;
   }
 
   .b-url {
@@ -518,9 +514,11 @@ export default function InvitationCard() {
 
             <div className="face back" ref={backRef}>
               <p className="b-title">Our Wedding Website</p>
-              <p className="b-body">kindly scan the QR code to visit<br />our wedding website</p>
-              <p className="b-body">use the buttons below to RSVP<br />or save the date to your calendar</p>
-              <p className="b-body">RSVP by the first of June · 2026</p>
+              <p className="b-body">
+                kindly scan the QR code to visit our wedding website<br />
+                use the buttons below to RSVP or save the date<br />
+                RSVP by the first of June · 2026
+              </p>
               <p className="b-url">milanpatel98.github.io/milanjenniferweds</p>
                 <a
                   className="qr-wrap"

@@ -144,7 +144,7 @@ const css = `
     font-weight: 300;
     font-size: 7.5px;
     letter-spacing: 5px;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.68);
     text-transform: uppercase;
     text-align: center;
     white-space: nowrap;
@@ -194,7 +194,7 @@ const css = `
     font-weight: 300;
     font-size: 7.5px;
     letter-spacing: 2.5px;
-    color: rgba(255,255,255,0.45);
+    color: rgba(255,255,255,0.68);
     text-transform: uppercase;
     text-align: center;
     white-space: nowrap;
@@ -219,7 +219,7 @@ const css = `
     font-weight: 300;
     font-size: 7.5px;
     letter-spacing: 2px;
-    color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.62);
     text-transform: uppercase;
     text-align: center;
     font-variant-numeric: lining-nums;
@@ -242,7 +242,7 @@ const css = `
   .f-reception {
     font-family: 'The Artisan', cursive;
     font-size: 21px;
-    color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.56);
     text-align: center;
     line-height: 1;
     white-space: nowrap;
@@ -289,7 +289,7 @@ const css = `
     font-size: 10px;
     font-style: normal;
     font-weight: 300;
-    color: rgba(255,255,255,0.45);
+    color: rgba(255,255,255,0.68);
     text-align: center;
     line-height: 1.7;
     letter-spacing: 2px;
@@ -301,7 +301,7 @@ const css = `
     font-weight: 300;
     font-style: italic;
     letter-spacing: 0.5px;
-    color: rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.5);
     text-align: center;
     white-space: nowrap;
   }
@@ -327,7 +327,7 @@ const css = `
   .b-sig {
     font-family: 'The Artisan', cursive;
     font-size: 20px;
-    color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.56);
     text-align: center;
     display: block;
     line-height: 1.1;
@@ -336,7 +336,7 @@ const css = `
   .b-sig-plus {
     font-family: 'Masculin', cursive;
     font-size: 32px;
-    color: rgba(255,255,255,0.45);
+    color: rgba(255,255,255,0.58);
     text-align: center;
     display: block;
     line-height: 1;
@@ -348,7 +348,7 @@ const css = `
     font-weight: 300;
     font-size: 9px;
     letter-spacing: 4px;
-    color: rgba(255,255,255,0.32);
+    color: rgba(255,255,255,0.5);
     text-transform: uppercase;
     cursor: pointer;
     user-select: none;

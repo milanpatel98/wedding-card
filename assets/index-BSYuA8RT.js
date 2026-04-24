@@ -313,7 +313,7 @@ Error generating stack: `+e.message+`
     font-family: 'Cormorant Garamond', serif;
     font-weight: 300;
     font-size: 9px;
-    letter-spacing: 4px;
+    letter-spacing: 1.5px;
     color: rgba(255,248,230,0.45);
     text-transform: uppercase;
     cursor: pointer;

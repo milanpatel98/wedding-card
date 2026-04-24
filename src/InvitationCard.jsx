@@ -216,8 +216,7 @@ const css = `
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 16px;
+    justify-content: space-between;
     padding: 52px 36px 48px;
   }
 
@@ -262,8 +261,8 @@ const css = `
   }
 
   .qr-wrap {
-    width: 175px;
-    height: 175px;
+    width: 200px;
+    height: 200px;
     background: transparent;
     padding: 4px;
     display: flex;

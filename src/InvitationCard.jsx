@@ -412,7 +412,7 @@ export default function InvitationCard() {
       // Reception
       "BEGIN:VEVENT",
       "DTSTART:20260606T163000",
-      "DTEND:20260606T220000",
+      "DTEND:20260606T233000",
       "SUMMARY:Jennifer & Milan's Wedding Reception",
       "LOCATION:Aria Event Hall\\, 740 Nordahl Rd Ste 125\\, San Marcos\\, CA 92069",
       "DESCRIPTION:Reception following the wedding ceremony of Jennifer Huitron and Milan Patel.",

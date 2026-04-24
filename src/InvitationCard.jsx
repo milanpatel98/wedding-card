@@ -216,8 +216,9 @@ const css = `
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 64px 36px 60px;
+    justify-content: center;
+    gap: 28px;
+    padding: 52px 36px 48px;
   }
 
   .b-top {

@@ -28,6 +28,7 @@ Error generating stack: `+e.message+`
   html, body {
     overflow-x: hidden;
     max-width: 100vw;
+    background: #000;
   }
 
   .wrapper {
@@ -312,23 +313,22 @@ Error generating stack: `+e.message+`
     font-weight: 300;
     font-size: 8px;
     letter-spacing: 4px;
-    color: rgba(255,255,255,0.22);
+    color: rgba(255,255,255,0.5);
     text-transform: uppercase;
     cursor: pointer;
     user-select: none;
     background: none;
-    border: none;
+    border: 1px solid rgba(255,255,255,0.25);
     padding: 10px 18px;
-    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 2px;
     transition: color 0.3s, border-color 0.3s;
   }
   .cal-btn:hover {
-    color: rgba(255,255,255,0.55);
-    border-color: rgba(255,255,255,0.22);
+    color: rgba(255,255,255,0.85);
+    border-color: rgba(255,255,255,0.5);
   }
   .cal-btn svg {
-    opacity: 0.5;
+    opacity: 0.7;
     transition: opacity 0.3s;
     flex-shrink: 0;
   }

@@ -216,8 +216,8 @@ const css = `
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 44px 36px 40px;
+    justify-content: space-evenly;
+    padding: 36px 36px 32px;
   }
 
   .b-title {
@@ -515,9 +515,11 @@ export default function InvitationCard() {
             <div className="face back" ref={backRef}>
               <p className="b-title">Our Wedding Website</p>
               <p className="b-body">
-                kindly scan the QR code to visit our wedding website<br />
-                use the buttons below to RSVP or save the date<br />
-                RSVP by the first of June · 2026
+                scan the QR code to visit<br />
+                our wedding website<br />
+                use the buttons below to RSVP<br />
+                or save the date to your calendar<br />
+                kindly RSVP by June 1st · 2026
               </p>
               <p className="b-url">milanpatel98.github.io/milanjenniferweds</p>
                 <a

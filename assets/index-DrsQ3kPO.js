@@ -61,8 +61,8 @@ Error generating stack: `+e.message+`
   }
 
   .scene {
-    width: min(410px, 90vw);
-    height: min(620px, calc(90vw * 1.513));
+    width: min(400px, 92vw);
+    height: min(600px, calc(92vw * 1.5));
     perspective: 1600px;
     cursor: pointer;
     position: relative;

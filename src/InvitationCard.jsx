@@ -217,14 +217,14 @@ const css = `
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 76px 36px 36px;
+    padding: 76px 36px 72px;
   }
 
   .b-main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 18px;
+    gap: 14px;
   }
 
   .b-top {
@@ -537,19 +537,21 @@ export default function InvitationCard() {
                 </p>
                 <p className="b-url">milanpatel98.github.io/milanjenniferweds</p>
               </div>
-              <a
-                className="qr-wrap"
-                href="https://milanpatel98.github.io/milanjenniferweds"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={e => e.stopPropagation()}
-              >
-                <img src={qrUrl} alt="QR Code" />
-              </a>
-              <div className="b-sigs">
-                <span className="b-sig">Jennifer</span>
-                <span className="b-sig-plus">+</span>
-                <span className="b-sig">Milan</span>
+              <div className="b-main">
+                <a
+                  className="qr-wrap"
+                  href="https://milanpatel98.github.io/milanjenniferweds"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={e => e.stopPropagation()}
+                >
+                  <img src={qrUrl} alt="QR Code" />
+                </a>
+                <div className="b-sigs">
+                  <span className="b-sig">Jennifer</span>
+                  <span className="b-sig-plus">+</span>
+                  <span className="b-sig">Milan</span>
+                </div>
               </div>
             </div>
 

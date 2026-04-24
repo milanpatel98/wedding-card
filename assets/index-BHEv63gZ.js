@@ -246,7 +246,7 @@ Error generating stack: `+e.message+`
     font-weight: 300;
     color: rgba(255,255,255,0.45);
     text-align: center;
-    line-height: 2.2;
+    line-height: 1.7;
     letter-spacing: 2px;
   }
 

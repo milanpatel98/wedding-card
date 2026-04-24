@@ -305,31 +305,46 @@ Error generating stack: `+e.message+`
   .hint:hover { color: rgba(255,255,255,0.35); }
 
   .cal-btn {
-    margin-top: 20px;
+    margin-top: 24px;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
+    gap: 10px;
     font-family: 'Cormorant Garamond', serif;
     font-weight: 300;
-    font-size: 8px;
-    letter-spacing: 4px;
-    color: rgba(255,255,255,0.5);
+    font-size: 10px;
+    letter-spacing: 6px;
+    color: rgba(255,255,255,0.45);
     text-transform: uppercase;
     cursor: pointer;
     user-select: none;
     background: none;
-    border: 1px solid rgba(255,255,255,0.25);
-    padding: 10px 18px;
-    border-radius: 2px;
-    transition: color 0.3s, border-color 0.3s;
+    border: none;
+    outline: none;
+    padding: 0;
+    position: relative;
+    transition: color 0.4s;
   }
-  .cal-btn:hover {
-    color: rgba(255,255,255,0.85);
-    border-color: rgba(255,255,255,0.5);
+  .cal-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(255,255,255,0.18);
+    transform: scaleX(0.4);
+    transform-origin: center;
+    transition: transform 0.4s ease, background 0.4s;
+  }
+  .cal-btn:hover { color: rgba(255,255,255,0.8); }
+  .cal-btn:hover::after {
+    transform: scaleX(1);
+    background: rgba(255,255,255,0.4);
   }
   .cal-btn svg {
-    opacity: 0.7;
-    transition: opacity 0.3s;
+    opacity: 0.6;
+    transition: opacity 0.4s;
     flex-shrink: 0;
   }
   .cal-btn:hover svg { opacity: 1; }

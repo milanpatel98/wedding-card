@@ -25,8 +25,15 @@ Error generating stack: `+e.message+`
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
   .wrapper {
     min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
     background: #000;
     display: flex;
     flex-direction: column;

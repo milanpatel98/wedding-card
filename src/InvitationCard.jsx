@@ -60,8 +60,8 @@ const css = `
   }
 
   .scene {
-    width: min(400px, 92vw);
-    height: min(600px, calc(92vw * 1.5));
+    width: min(370px, 90vw);
+    height: min(560px, calc(90vw * 1.513));
     perspective: 1600px;
     cursor: pointer;
     position: relative;
@@ -217,7 +217,7 @@ const css = `
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 28px;
+    gap: 16px;
     padding: 52px 36px 48px;
   }
 

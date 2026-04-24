@@ -416,9 +416,15 @@ export default function InvitationCard() {
                 other details are also on the website
               </p>
               <p className="b-url">milanpatel98.github.io/milanjenniferweds</p>
-              <div className="qr-wrap">
+                <a
+                  className="qr-wrap"
+                  href="https://milanpatel98.github.io/milanjenniferweds"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={e => e.stopPropagation()}
+                >
                   <img src={qrUrl} alt="QR Code" />
-              </div>
+                </a>
               <div className="b-sigs">
                 <span className="b-sig">Jennifer</span>
                 <span className="b-sig-plus">+</span>

@@ -676,8 +676,8 @@ export default function InvitationCard() {
       "PRODID:-//Milan & Jennifer Wedding//EN",
       // Ceremony
       "BEGIN:VEVENT",
-      "DTSTART:20260606T130000",
-      "DTEND:20260606T150000",
+      "DTSTART;TZID=America/Los_Angeles:20260606T130000",
+      "DTEND;TZID=America/Los_Angeles:20260606T150000",
       `SUMMARY:${t.cerSummary}`,
       "LOCATION:St Thomas Church\\, 1450 S Melrose Dr\\, Oceanside\\, CA 92056",
       `DESCRIPTION:${t.cerDesc}`,
@@ -685,8 +685,8 @@ export default function InvitationCard() {
       "END:VEVENT",
       // Reception
       "BEGIN:VEVENT",
-      "DTSTART:20260606T163000",
-      "DTEND:20260606T233000",
+      "DTSTART;TZID=America/Los_Angeles:20260606T163000",
+      "DTEND;TZID=America/Los_Angeles:20260606T233000",
       `SUMMARY:${t.recSummary}`,
       "LOCATION:Aria Event Hall\\, 740 Nordahl Rd Ste 125\\, San Marcos\\, CA 92069",
       `DESCRIPTION:${t.recDesc}`,

@@ -310,20 +310,20 @@ Error generating stack: `+e.message+`
   }
 
   .wrapper.light .f-plus {
-    color: rgba(28,22,18,0.55);
+    color: rgba(28,22,18,0.62);
   }
 
   .wrapper.light .f-together,
   .wrapper.light .f-request {
-    color: rgba(28,22,18,0.6);
+    color: rgba(28,22,18,0.72);
   }
 
   .wrapper.light .f-details {
-    color: rgba(28,22,18,0.56);
+    color: rgba(28,22,18,0.68);
   }
 
   .wrapper.light .f-reception {
-    color: rgba(28,22,18,0.5);
+    color: rgba(28,22,18,0.62);
   }
 
   /* BACK */
@@ -427,19 +427,19 @@ Error generating stack: `+e.message+`
   }
 
   .wrapper.light .b-body {
-    color: rgba(28,22,18,0.62);
+    color: rgba(28,22,18,0.72);
   }
 
   .wrapper.light .b-url {
-    color: rgba(28,22,18,0.48);
+    color: rgba(28,22,18,0.58);
   }
 
   .wrapper.light .b-sig {
-    color: rgba(28,22,18,0.5);
+    color: rgba(28,22,18,0.62);
   }
 
   .wrapper.light .b-sig-plus {
-    color: rgba(28,22,18,0.55);
+    color: rgba(28,22,18,0.66);
   }
 
   .hint {
@@ -458,7 +458,7 @@ Error generating stack: `+e.message+`
   .hint:hover { color: rgba(255,255,255,0.6); }
 
   .wrapper.light .hint {
-    color: rgba(28,22,18,0.55);
+    color: rgba(28,22,18,0.66);
   }
 
   .wrapper.light .hint:hover {
